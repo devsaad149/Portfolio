@@ -25,7 +25,7 @@ const Contact = () => {
                             <div className="contact__icon-wrapper">📞</div> +92-318-0820643
                         </div>
                         <div className="contact__item">
-                            <div className="contact__icon-wrapper">📧</div> saad.sohail@example.com
+                            <div className="contact__icon-wrapper">📧</div> sasaad149@gmail.com
                         </div>
                     </div>
 
