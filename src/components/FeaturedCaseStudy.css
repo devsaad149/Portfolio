@@ -1,0 +1,181 @@
+.featured-case {
+    background-color: var(--color-off-white);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: var(--space-xl);
+    color: var(--color-black);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.featured-case__header {
+    padding: var(--space-md) var(--space-md) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.featured-case__label {
+    background-color: var(--color-black);
+    color: var(--color-white-pure);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+}
+
+.featured-case__title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--space-xs);
+}
+
+.featured-case__meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.featured-case__body {
+    padding: var(--space-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.featured-case__info h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xs);
+    margin-top: var(--space-sm);
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.featured-case__info p,
+.featured-case__info li {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.featured-case__metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.metric-card {
+    background: white;
+    padding: var(--space-sm);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.metric-card__icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.metric-card__value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-black);
+}
+
+.metric-card__label {
+    font-size: 0.8rem;
+    color: var(--color-grey-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.featured-case__chart {
+    grid-column: 1 / -1;
+    background: white;
+    padding: var(--space-md);
+    border-radius: 8px;
+    margin-top: var(--space-sm);
+}
+
+.chart-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.chart-bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.chart-bar-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.85rem;
+}
+
+.chart-label {
+    width: 150px;
+    text-align: right;
+    font-weight: 500;
+}
+
+.chart-track {
+    flex: 1;
+    background: var(--color-grey-ultralight);
+    height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.chart-fill {
+    height: 100%;
+    background: var(--color-black);
+    border-radius: 12px;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chart-value {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Adjust text color inside bar if it's dark fill? User asked for Black primary. 
+   If bar is black, text inside should be white. 
+*/
+.chart-fill .chart-value {
+    color: white;
+    right: 8px;
+}
+
+/* But the value is inside the track, simpler to put it outside or ensure contrast. 
+   Let's just put value inside the fill div.
+*/
+
+@media (max-width: 900px) {
+    .featured-case__body {
+        grid-template-columns: 1fr;
+    }
+}

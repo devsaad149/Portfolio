@@ -1,0 +1,153 @@
+/* Unfold Style Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    /* For parallax */
+    background-image: url('../assets/profile.png');
+    /* Will be set dynamically or fixed */
+    background-size: cover;
+    background-position: center 15%;
+    /* Focused more on the face */
+    z-index: 1;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Slight dark overlay for contrast */
+    z-index: 2;
+}
+
+.hero__content-center {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: var(--color-white);
+    padding: 20px;
+}
+
+.hero__title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-family: var(--font-display);
+}
+
+.hero__subtitles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hero__subtitle-main {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.hero__subtitle-secondary {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-white);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+
+.scroll-mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid var(--color-white);
+    border-radius: 12px;
+    position: relative;
+}
+
+.scroll-wheel {
+    width: 2px;
+    height: 6px;
+    background-color: var(--color-white);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        top: 6px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 20px;
+        opacity: 0;
+    }
+}
+
+/* Animation utilities for Hero */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,56 @@
+:root {
+    /* Brand Colors */
+    --color-midnight-blue: #1E3A8A;
+    --color-emerald: #10B981;
+    --color-emerald-dark: #059669;
+    --color-gold: #FBBF24;
+    --color-limelight: #84CC16;
+
+    /* Neutrals */
+    --color-light-grey: #F3F4F6;
+    --color-white: #FFFFFF;
+    --color-charcoal: #1F2937;
+    --color-grey-medium: #6B7280;
+    --color-border: #D1D5DB;
+
+    /* Legacy Mappings (for compatibility) */
+    --color-black: var(--color-midnight-blue);
+    --color-off-white: var(--color-light-grey);
+    --color-white-pure: var(--color-white);
+
+    /* Semantic Theme Variables */
+    --bg-primary: var(--color-light-grey);
+    --bg-secondary: var(--color-white);
+    --bg-nav: var(--color-midnight-blue);
+
+    --text-primary: var(--color-charcoal);
+    /* Body text */
+    --text-secondary: var(--color-grey-medium);
+    --text-heading: var(--color-midnight-blue);
+    --text-light: var(--color-white);
+
+    --accent-primary: var(--color-emerald);
+    --accent-hover: var(--color-emerald-dark);
+    --accent-secondary: var(--color-gold);
+    --border-color: var(--color-border);
+
+    /* Typography */
+    --font-primary: 'Inter', sans-serif;
+    --font-display: 'Montserrat', sans-serif;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.4s ease;
+    --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}

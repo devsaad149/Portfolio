@@ -1,0 +1,46 @@
+.achievements {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-light-grey);
+}
+
+.achievements__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.achievement-card {
+    background: var(--color-white);
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    transition: all var(--transition-medium);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    /* Emerald */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.achievement-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.achievement-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
