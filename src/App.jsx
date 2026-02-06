@@ -19,6 +19,7 @@ const Home = () => (
     <Hero />
     <About />
     <Services />
+    <Portfolio />
     <Experience />
     <Achievements />
     <Education />
@@ -65,7 +66,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/work" element={<Portfolio />} />
         </Routes>
 
         <Footer />

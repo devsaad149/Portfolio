@@ -54,7 +54,7 @@ const Header = () => {
                             {link.name}
                         </a>
                     ))}
-                    <a href="/work" className="header__cta">View My Work</a>
+                    <a href="/#work" className="header__cta">View My Work</a>
 
                     <a
                         href={cvFile}
@@ -90,7 +90,7 @@ const Header = () => {
                             {link.name}
                         </a>
                     ))}
-                    <a href="/work" className="header__cta" onClick={toggleMenu}>View My Work</a>
+                    <a href="/#work" className="header__cta" onClick={toggleMenu}>View My Work</a>
                     <a
                         href={cvFile}
                         download="Saad_Sohail_Digital_Marketing_CV.pdf"
