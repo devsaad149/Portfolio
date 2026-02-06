@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useOnScreen } from '../hooks/useOnScreen';
 import { LinkedInIcon, WhatsAppIcon } from './SocialIcons';
 import './Contact.css';
 
 const Contact = () => {
     const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleWhatsApp = (e) => {
+        e.preventDefault();
+        const text = `Hello Saad, I am ${formData.name}. %0A%0ASubject: ${formData.subject || 'Portfolio Query'}%0A%0AMessage: ${formData.message}`;
+        const whatsappUrl = `https://wa.me/923180820643?text=${text}`;
+        window.open(whatsappUrl, '_blank');
+    };
 
     return (
         <section id="contact" className="contact section-fullscreen" ref={ref}>
@@ -39,20 +56,30 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <form className={`contact__form revealSlide ${isVisible ? 'active' : ''}`} style={{ transitionDelay: '200ms' }}>
+                <form
+                    action="https://formspree.io/f/mwszeonl"
+                    method="POST"
+                    className={`contact__form revealSlide ${isVisible ? 'active' : ''}`}
+                    style={{ transitionDelay: '200ms' }}
+                >
                     <div className="form-group">
-                        <input type="text" placeholder="Your Name" required />
+                        <input type="text" name="name" placeholder="Your Name" required value={formData.name} onChange={handleChange} />
                     </div>
                     <div className="form-group">
-                        <input type="email" placeholder="Email Address" required />
+                        <input type="email" name="email" placeholder="Email Address" required value={formData.email} onChange={handleChange} />
                     </div>
                     <div className="form-group">
-                        <input type="text" placeholder="Subject (Optional)" />
+                        <input type="text" name="subject" placeholder="Subject (Optional)" value={formData.subject} onChange={handleChange} />
                     </div>
                     <div className="form-group">
-                        <textarea placeholder="Message" required></textarea>
+                        <textarea name="message" placeholder="Message" required value={formData.message} onChange={handleChange}></textarea>
                     </div>
-                    <button type="submit" className="btn btn--primary">Send Message</button>
+                    <div className="contact__buttons" style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+                        <button type="submit" className="btn btn--primary">Send via Email</button>
+                        <button type="button" onClick={handleWhatsApp} className="btn btn--outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <WhatsAppIcon size={18} /> Chat on WhatsApp
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>
