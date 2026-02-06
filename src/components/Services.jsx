@@ -28,7 +28,7 @@ const servicesList = [
         color: "#FF9800"
     },
     {
-        title: "Social Media Mgmt",
+        title: "Social Media Management",
         desc: "Engaging content calendars and community management to build brand loyalty.",
         icon: "📱",
         color: "#9C27B0"
