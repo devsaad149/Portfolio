@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import profileImg from '../assets/profile.png';
-
 import { Link } from 'react-router-dom';
 import { LinkedInIcon, WhatsAppIcon } from './SocialIcons';
 
 const Hero = () => {
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setOffset(window.pageYOffset);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <section className="hero section-fullscreen" id="home">
-            <div className="hero__background"></div>
+            <div
+                className="hero__background"
+                style={{ transform: `translateY(${offset * 0.4}px)` }}
+            ></div>
             <div className="hero__overlay"></div>
 
             <div className="hero__content-center">

@@ -10,6 +10,7 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import ScrollProgress from './components/ScrollProgress';
 import CaseStudies from './components/CaseStudies';
 
 import Portfolio from './components/Portfolio';
@@ -60,6 +61,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollProgress />
         <CustomCursor />
         <Header />
 
