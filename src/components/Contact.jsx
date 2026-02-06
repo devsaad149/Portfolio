@@ -57,7 +57,7 @@ const Contact = () => {
                 </div>
 
                 <form
-                    action="https://formspree.io/f/mwszeonl"
+                    action="https://formspree.io/f/xjgevgwv"
                     method="POST"
                     className={`contact__form revealSlide ${isVisible ? 'active' : ''}`}
                     style={{ transitionDelay: '200ms' }}
