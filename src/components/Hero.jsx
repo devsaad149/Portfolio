@@ -3,6 +3,7 @@ import './Hero.css';
 import profileImg from '../assets/profile.png';
 import { Link } from 'react-router-dom';
 import { LinkedInIcon, WhatsAppIcon } from './SocialIcons';
+import Hero3D from './Hero3D';
 
 const Hero = () => {
     const [offset, setOffset] = useState(0);
@@ -17,9 +18,10 @@ const Hero = () => {
 
     return (
         <section className="hero section-fullscreen" id="home">
+            <Hero3D />
             <div
                 className="hero__background"
-                style={{ transform: `translateY(${offset * 0.4}px)` }}
+                style={{ transform: `translateY(${offset * 0.4}px)`, opacity: 0.3 }}
             ></div>
             <div className="hero__overlay"></div>
 
