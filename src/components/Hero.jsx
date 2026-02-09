@@ -19,10 +19,10 @@ const Hero = () => {
     return (
         <section className="hero section-fullscreen" id="home">
             {/* Temporarily hidden for 3D verification */}
-            {/* <div
+            <div
                 className="hero__background"
-                style={{ transform: `translateY(${offset * 0.4}px)`, opacity: 0.05 }}
-            ></div> */}
+                style={{ transform: `translateY(${offset * 0.4}px)`, opacity: 0.15 }}
+            ></div>
             <div className="hero__overlay" style={{ background: 'rgba(0,0,0,0.8)', zIndex: 1 }}></div>
             {/* 3D Visual Layer */}
             <Hero3D />
