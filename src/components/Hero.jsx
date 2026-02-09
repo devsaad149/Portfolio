@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Hero.css';
-import profileImg from '../assets/profile.png';
 import { Link } from 'react-router-dom';
 import { LinkedInIcon, WhatsAppIcon } from './SocialIcons';
-import Hero3D from './Hero3D';
 import { Canvas } from '@react-three/fiber';
 import Profile3D from './3D/Profile3D';
 
 const Hero = () => {
-    const [offset, setOffset] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setOffset(window.pageYOffset);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
         <section className="hero section-fullscreen" id="home">
