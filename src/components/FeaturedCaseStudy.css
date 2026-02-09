@@ -1,181 +1,214 @@
 .featured-case {
-    background-color: var(--color-off-white);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: var(--space-xl);
-    color: var(--color-black);
+    margin-bottom: 6rem;
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 2;
 }
 
-.featured-case__header {
-    padding: var(--space-md) var(--space-md) 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
+.featured-case__container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 32px;
+    padding: 3rem;
+    overflow: hidden;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
 }
 
-.featured-case__label {
-    background-color: var(--color-black);
-    color: var(--color-white-pure);
-    padding: 0.25rem 0.75rem;
+.featured-case__badge {
+    background: var(--color-accent);
+    color: white;
+    padding: 0.4rem 1rem;
     font-size: 0.75rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    border-radius: 2px;
+    letter-spacing: 0.15em;
+    border-radius: 50px;
     display: inline-block;
-    margin-bottom: var(--space-xs);
+    margin-bottom: 1.5rem;
 }
 
 .featured-case__title {
+    font-size: 3rem;
     font-family: var(--font-display);
-    font-size: 2rem;
     font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: var(--space-xs);
+    color: var(--color-text-bright);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
 }
 
 .featured-case__meta {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    color: var(--color-text-muted);
     font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 3rem;
 }
 
-.featured-case__body {
-    padding: var(--space-md);
+.featured-case__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
 }
 
-.featured-case__info h4 {
+.info-section {
+    margin-bottom: 2.5rem;
+}
+
+.info-section h4 {
+    color: var(--color-accent);
     font-size: 1.1rem;
-    margin-bottom: var(--space-xs);
-    margin-top: var(--space-sm);
-    font-weight: 700;
-    color: var(--text-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    margin-bottom: 1rem;
 }
 
-.featured-case__info p,
-.featured-case__info li {
-    font-size: 0.95rem;
-    color: var(--text-primary);
+.info-section p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.strategy-list {
+    list-style: none;
+    padding: 0;
+}
+
+.strategy-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.8rem;
     line-height: 1.6;
+}
+
+.strategy-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
 }
 
 .featured-case__metrics {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-sm);
-    margin-top: var(--space-md);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .metric-card {
-    background: white;
-    padding: var(--space-sm);
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
 }
 
-.metric-card__icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-    display: block;
+.metric-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+.metric-card__icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--color-accent);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .metric-card__value {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 800;
-    color: var(--color-black);
+    color: var(--color-text-bright);
+    font-family: var(--font-display);
 }
 
 .metric-card__label {
-    font-size: 0.8rem;
-    color: var(--color-grey-medium);
+    font-size: 0.75rem;
+    color: var(--color-text-dim);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-weight: 700;
 }
 
 .featured-case__chart {
-    grid-column: 1 / -1;
-    background: white;
-    padding: var(--space-md);
-    border-radius: 8px;
-    margin-top: var(--space-sm);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.chart-title {
+.chart-heading {
+    color: var(--color-text-bright);
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: var(--space-md);
+    margin-bottom: 2rem;
     text-align: center;
 }
 
 .chart-bars {
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: 1.5rem;
 }
 
-.chart-bar-row {
+.chart-item__info {
     display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    font-size: 0.85rem;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
 }
 
-.chart-label {
-    width: 150px;
-    text-align: right;
+.chart-item__label {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
-.chart-track {
-    flex: 1;
-    background: var(--color-grey-ultralight);
-    height: 24px;
-    border-radius: 12px;
+.chart-item__value {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.chart-item__track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
     overflow: hidden;
-    position: relative;
 }
 
-.chart-fill {
+.chart-item__fill {
     height: 100%;
-    background: var(--color-black);
-    border-radius: 12px;
-    width: 0;
-    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    background: linear-gradient(to right, var(--color-accent), var(--color-violet));
+    border-radius: 10px;
 }
 
-.chart-value {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: black;
-    font-weight: 600;
-    font-size: 0.75rem;
+@media (max-width: 1200px) {
+    .featured-case__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }
 
-/* Adjust text color inside bar if it's dark fill? User asked for Black primary. 
-   If bar is black, text inside should be white. 
-*/
-.chart-fill .chart-value {
-    color: white;
-    right: 8px;
-}
+@media (max-width: 768px) {
+    .featured-case__container {
+        padding: 2rem;
+    }
 
-/* But the value is inside the track, simpler to put it outside or ensure contrast. 
-   Let's just put value inside the fill div.
-*/
+    .featured-case__title {
+        font-size: 2rem;
+    }
 
-@media (max-width: 900px) {
-    .featured-case__body {
+    .featured-case__metrics {
         grid-template-columns: 1fr;
     }
 }
