@@ -1,28 +1,28 @@
 import React from 'react';
-import { useOnScreen } from '../hooks/useOnScreen';
+import { motion } from 'framer-motion';
+import TiltCard from './3D/TiltCard';
+import FeaturedCaseStudy from './FeaturedCaseStudy';
 import './Achievements.css';
 
 const AchievementCard = ({ icon, title, desc, delay }) => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
-
     return (
-        <div
-            className={`achievement-card reveal ${isVisible ? 'active' : ''}`}
-            ref={ref}
-            style={{ transitionDelay: `${delay}ms` }}
-        >
-            <span className="achievement-icon">{icon}</span>
-            <h3>{title}</h3>
-            <p>{desc}</p>
-        </div>
+        <TiltCard className="achievement-card-wrapper">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay }}
+                className="achievement-card"
+            >
+                <span className="achievement-icon">{icon}</span>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+            </motion.div>
+        </TiltCard>
     );
 };
 
-import FeaturedCaseStudy from './FeaturedCaseStudy';
-
 const Achievements = () => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
-
     const data = [
         {
             icon: "🎯",
@@ -47,18 +47,23 @@ const Achievements = () => {
     ];
 
     return (
-        <section id="achievements" className="achievements" ref={ref}>
+        <section id="achievements" className="achievements">
             <div className="container">
-                <div className={`section-header reveal ${isVisible ? 'active' : ''}`}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="section-header"
+                >
+                    <h5 className="section-subtitle">Impact</h5>
                     <h2 className="section-title">Key Achievements</h2>
-                    <p style={{ color: 'var(--text-secondary)' }}>Delivering impact through execution</p>
-                </div>
+                </motion.div>
 
                 <FeaturedCaseStudy />
 
                 <div className="achievements__grid">
                     {data.map((item, i) => (
-                        <AchievementCard key={i} {...item} delay={i * 100} />
+                        <AchievementCard key={i} {...item} delay={i * 0.1} />
                     ))}
                 </div>
             </div>

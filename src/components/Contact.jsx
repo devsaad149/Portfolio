@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useOnScreen } from '../hooks/useOnScreen';
-import { LinkedInIcon, WhatsAppIcon } from './SocialIcons';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Linkedin, MessageSquare } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -24,11 +23,16 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="contact section-fullscreen" ref={ref}>
+        <section id="contact" className="contact section-fullscreen">
             <div className="container contact__grid">
-                <div className={`contact__info reveal ${isVisible ? 'active' : ''}`}>
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="contact__info"
+                >
                     <h5 className="section-subtitle">Get in Touch</h5>
-                    <h3>Let's work together</h3>
+                    <h2 className="section-title">Let's work together</h2>
                     <p className="contact__text">
                         Ready to scale your business? Whether you have a project in mind or just want to
                         chat about digital marketing strategies, I'm here to help.
@@ -36,31 +40,36 @@ const Contact = () => {
 
                     <div className="contact__details">
                         <div className="contact__item">
-                            <div className="contact__icon-wrapper">📍</div> Rawalpindi, Pakistan
+                            <div className="contact__icon-wrapper"><MapPin size={20} /></div>
+                            <span>Rawalpindi, Pakistan</span>
                         </div>
                         <div className="contact__item">
-                            <div className="contact__icon-wrapper">📞</div> +92-318-0820643
+                            <div className="contact__icon-wrapper"><Phone size={20} /></div>
+                            <span>+92-318-0820643</span>
                         </div>
                         <div className="contact__item">
-                            <div className="contact__icon-wrapper">📧</div> sasaad149@gmail.com
+                            <div className="contact__icon-wrapper"><Mail size={20} /></div>
+                            <span>sasaad149@gmail.com</span>
                         </div>
                     </div>
 
                     <div className="contact__socials">
                         <a href="https://linkedin.com/in/saad-sohail-2b40a5250" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
-                            <LinkedInIcon size={20} />
+                            <Linkedin size={24} />
                         </a>
                         <a href="https://wa.me/923180820643" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
-                            <WhatsAppIcon size={20} />
+                            <MessageSquare size={24} />
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
-                <form
+                <motion.form
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
                     action="https://formspree.io/f/xjgevgwv"
                     method="POST"
-                    className={`contact__form revealSlide ${isVisible ? 'active' : ''}`}
-                    style={{ transitionDelay: '200ms' }}
+                    className="contact__form"
                 >
                     <div className="form-group">
                         <input type="text" name="name" placeholder="Your Name" required value={formData.name} onChange={handleChange} />
@@ -74,13 +83,13 @@ const Contact = () => {
                     <div className="form-group">
                         <textarea name="message" placeholder="Message" required value={formData.message} onChange={handleChange}></textarea>
                     </div>
-                    <div className="contact__buttons" style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-                        <button type="submit" className="btn btn--primary">Send via Email</button>
-                        <button type="button" onClick={handleWhatsApp} className="btn btn--outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <WhatsAppIcon size={18} /> Chat on WhatsApp
+                    <div className="contact__buttons">
+                        <button type="submit" className="btn btn--primary">Send Email</button>
+                        <button type="button" onClick={handleWhatsApp} className="btn btn--outline">
+                            <MessageSquare size={18} style={{ marginRight: '8px' }} /> Chat on WhatsApp
                         </button>
                     </div>
-                </form>
+                </motion.form>
             </div>
         </section>
     );

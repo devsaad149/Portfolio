@@ -1,4 +1,4 @@
-/* Unfold Style Hero */
+/* Modern 3D Redesign Hero */
 .hero {
     position: relative;
     height: 100vh;
@@ -9,74 +9,96 @@
     justify-content: center;
     padding: 0;
     margin: 0;
-    background-color: #000;
-    /* Ensure solid background for 3D */
+    background: transparent;
 }
 
-.hero__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    /* For parallax */
-    background-image: url('../assets/profile.png');
-    /* Will be set dynamically or fixed */
-    background-size: cover;
-    background-position: center 15%;
-    /* Focused more on the face */
-    z-index: 1;
-    transform: translateY(0);
-    will-change: transform;
-}
-
-.hero__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    /* Slight dark overlay for contrast */
-    z-index: 2;
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    text-align: center;
 }
 
 .hero__content-center {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    color: var(--color-white);
-    padding: 20px;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .hero__title {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    color: var(--color-white);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: var(--font-display);
 }
 
 .hero__subtitles {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin-bottom: 2rem;
 }
 
 .hero__subtitle-main {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--color-text-bright);
+    margin-bottom: 0.5rem;
 }
 
 .hero__subtitle-secondary {
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.hero__cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Button enhancements */
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn--primary {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: 0 10px 20px -5px var(--color-accent-glow);
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 20px 30px -10px var(--color-accent-glow);
+    background: var(--color-violet);
+}
+
+.btn--outline {
+    border: 1px solid var(--border-color);
+    color: var(--color-text-bright);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
 }
 
 /* Scroll Indicator */
@@ -85,29 +107,30 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    color: var(--color-white);
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    font-weight: 600;
+    gap: 12px;
+    color: var(--color-text-dim);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .scroll-mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid var(--color-white);
-    border-radius: 12px;
+    width: 22px;
+    height: 36px;
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
     position: relative;
 }
 
 .scroll-wheel {
     width: 2px;
     height: 6px;
-    background-color: var(--color-white);
+    background-color: var(--color-accent);
     position: absolute;
     top: 6px;
     left: 50%;
@@ -123,16 +146,16 @@
     }
 
     100% {
-        top: 20px;
+        top: 22px;
         opacity: 0;
     }
 }
 
-/* Animation utilities for Hero */
+/* Animations */
 .fade-in-up {
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .delay-200 {

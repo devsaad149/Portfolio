@@ -1,63 +1,56 @@
 import React from 'react';
-import { useOnScreen } from '../hooks/useOnScreen';
+import { motion } from 'framer-motion';
+import { GraduationCap } from 'lucide-react';
 
 const Education = () => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
-
-    const styles = {
-        section: {
-            padding: 'var(--space-xl) 0',
-            background: 'var(--bg-primary)',
+    const educationData = [
+        {
+            degree: "Bachelor of Business Administration (BBA)",
+            institution: "Arid University",
+            year: "2021 - 2025"
         },
-        grid: {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'var(--space-md)',
-        },
-        card: {
-            borderLeft: '2px solid var(--text-primary)',
-            paddingLeft: 'var(--space-md)',
-        },
-        degree: {
-            fontSize: '1.25rem',
-            fontWeight: '700',
-            color: 'var(--text-primary)',
-            marginBottom: '0.5rem',
-        },
-        institution: {
-            fontSize: '1rem',
-            color: 'var(--text-accent)',
-        },
-        year: {
-            fontSize: '0.9rem',
-            color: 'var(--text-secondary)',
-            marginTop: '0.25rem',
+        {
+            degree: "F.Sc (Intermediate)",
+            institution: "APS, PMA Kakul",
+            year: "2019 - 2021"
         }
-    };
+    ];
 
     return (
-        <section id="education" style={styles.section} ref={ref}>
+        <section id="education" className="education py-24">
             <div className="container">
-                <div className={`section-header reveal ${isVisible ? 'active' : ''}`}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="section-header"
+                >
+                    <h5 className="section-subtitle">Learning</h5>
                     <h2 className="section-title">Education</h2>
-                </div>
+                </motion.div>
 
-                <div className="reveal" style={{
-                    ...styles.grid,
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                    transition: 'all 0.6s ease'
-                }}>
-                    <div style={styles.card}>
-                        <div style={styles.degree}>Bachelor of Business Administration (BBA)</div>
-                        <div style={styles.institution}>Arid University</div>
-                        <div style={styles.year}>2021 - 2025</div>
-                    </div>
-                    <div style={styles.card}>
-                        <div style={styles.degree}>F.Sc (Intermediate)</div>
-                        <div style={styles.institution}>APS, PMA Kakul</div>
-                        <div style={styles.year}>2019 - 2021</div>
-                    </div>
+                <div className="education__grid mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {educationData.map((edu, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="education-card p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-all group"
+                        >
+                            <div className="flex items-start gap-6">
+                                <div className="p-4 rounded-2xl bg-indigo-500/10 text-indigo-500 group-hover:scale-110 transition-transform">
+                                    <GraduationCap size={28} />
+                                </div>
+                                <div>
+                                    <span className="text-sm font-bold text-indigo-500 uppercase tracking-wider">{edu.year}</span>
+                                    <h3 className="text-xl font-bold text-white mt-1 mb-2 font-display">{edu.degree}</h3>
+                                    <p className="text-zinc-400 font-medium">{edu.institution}</p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

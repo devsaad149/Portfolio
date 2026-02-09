@@ -1,68 +1,87 @@
 import React from 'react';
-import { useOnScreen } from '../hooks/useOnScreen';
+import { motion } from 'framer-motion';
+import {
+    Target,
+    Mail,
+    TrendingUp,
+    Lightbulb,
+    Share2,
+    BarChart3
+} from 'lucide-react';
+import TiltCard from './3D/TiltCard';
 import './Expertise.css';
 
 const services = [
     {
         title: "Meta Advertising",
         desc: "Advanced targeting and creative strategies to maximize ROAS on Facebook & Instagram.",
-        icon: "🎯",
-        color: "#2196F3"
+        icon: Target,
+        color: "#6366f1"
     },
     {
         title: "Email Marketing",
         desc: "Automated flows and segmented campaigns that drive retention and repeat purchases.",
-        icon: "✉️",
-        color: "#E91E63"
+        icon: Mail,
+        color: "#8b5cf6"
     },
     {
         title: "Growth Marketing",
         desc: "Data-driven experiments to identify and scale new channels for user acquisition.",
-        icon: "🚀",
-        color: "#7AC943"
+        icon: TrendingUp,
+        color: "#ec4899"
     },
     {
         title: "Digital Strategy",
         desc: "Comprehensive roadmaps aligning digital channels with business objectives.",
-        icon: "💡",
-        color: "#FF9800"
+        icon: Lightbulb,
+        color: "#f59e0b"
     },
     {
         title: "Social Media Management",
         desc: "Engaging content calendars and community management to build brand loyalty.",
-        icon: "📱",
-        color: "#9C27B0"
+        icon: Share2,
+        color: "#06b6d4"
     },
     {
         title: "Analytics & Optimization",
         desc: "Deep dive analysis and A/B testing to continuously improve funnel performance.",
-        icon: "📊",
-        color: "#00BCD4"
+        icon: BarChart3,
+        color: "#10b981"
     }
 ];
 
 const Expertise = () => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
-
     return (
-        <section id="services" className="services section-fullscreen" ref={ref}>
+        <section id="services" className="services section-fullscreen">
             <div className="container">
-                <div className={`section-header reveal ${isVisible ? 'active' : ''}`}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="section-header"
+                >
+                    <h5 className="section-subtitle">Expertise</h5>
                     <h2 className="section-title">My Services</h2>
-                    <p className="section-subtitle">What I Do</p>
-                </div>
+                </motion.div>
 
                 <div className="services__grid">
                     {services.map((service, index) => (
-                        <div
-                            key={index}
-                            className={`service-card reveal ${isVisible ? 'active' : ''}`}
-                            style={{ transitionDelay: `${index * 100}ms` }}
-                        >
-                            <div className="service-icon" style={{ color: service.color }}>{service.icon}</div>
-                            <h3>{service.title}</h3>
-                            <p>{service.desc}</p>
-                        </div>
+                        <TiltCard key={index} className="service-card-wrapper">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="service-card"
+                            >
+                                <div className="service-icon" style={{ background: `${service.color}20`, color: service.color }}>
+                                    <service.icon size={32} />
+                                </div>
+                                <h3>{service.title}</h3>
+                                <p>{service.desc}</p>
+                            </motion.div>
+                        </TiltCard>
                     ))}
                 </div>
             </div>

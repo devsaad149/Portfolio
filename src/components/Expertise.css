@@ -1,70 +1,62 @@
-/* Services Section (Unfold Style) */
 .services {
     padding: var(--space-xl) 0;
-    background-color: var(--color-white);
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: var(--space-xl);
-}
-
-.section-title {
-    font-family: var(--font-display);
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--color-charcoal);
-    margin-bottom: var(--space-sm);
-}
-
-.section-subtitle {
-    font-size: 1rem;
-    color: var(--color-grey-medium);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 600;
+    position: relative;
+    z-index: 2;
 }
 
 .services__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.service-card-wrapper {
+    perspective: 1000px;
 }
 
 .service-card {
-    background: var(--color-white);
-    padding: 40px;
-    border-radius: 4px;
-    transition: all 0.4s ease;
-    /* Minimal border or shadow */
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    height: 100%;
+    transition: border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent);
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    margin-bottom: 2rem;
     transition: transform 0.3s ease;
 }
 
 .service-card:hover .service-icon {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(5deg);
 }
 
 .service-card h3 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--color-charcoal);
-    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text-bright);
+    font-family: var(--font-display);
 }
 
 .service-card p {
-    color: var(--color-grey-medium);
-    font-size: 1rem;
+    color: var(--color-text-muted);
     line-height: 1.7;
 }
 

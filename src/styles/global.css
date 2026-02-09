@@ -78,8 +78,8 @@ section {
 
 /* Custom Selection Color */
 ::selection {
-    background-color: var(--color-grey-medium);
-    color: var(--color-black);
+    background-color: var(--color-accent);
+    color: #fff;
 }
 
 /* Scrollbar */

@@ -14,6 +14,7 @@ import ScrollProgress from './components/ScrollProgress';
 import CaseStudies from './components/CaseStudies';
 
 import Portfolio from './components/Portfolio';
+import ThreeScene from './components/ThreeScene';
 
 const Home = () => (
   <main>
@@ -61,6 +62,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ThreeScene />
         <ScrollProgress />
         <CustomCursor />
         <Header />

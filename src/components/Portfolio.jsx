@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
-import { useOnScreen } from '../hooks/useOnScreen';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import TiltCard from './3D/TiltCard';
 import './Portfolio.css';
 
 // Import images
@@ -12,31 +12,32 @@ import metaAdsImg from '../assets/portfolio/meta_ads.png';
 import campaignOverviewImg from '../assets/portfolio/campaign_overview_v2.jpg';
 
 const PortfolioCard = ({ image, title, category, index }) => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.1 });
-
     return (
-        <div
-            className={`portfolio-card reveal ${isVisible ? 'active' : ''}`}
-            ref={ref}
-            style={{ transitionDelay: `${index * 200}ms` }}
+        <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-            <div className="portfolio-image-wrapper">
-                <Zoom>
-                    <img
-                        src={image}
-                        alt={title}
-                        className="portfolio-image"
-                        loading="lazy"
-                    />
-                </Zoom>
-                <div className="portfolio-overlay">
-                    <div className="portfolio-content">
-                        <span className="portfolio-category">{category}</span>
-                        <h3 className="portfolio-title-card">{title}</h3>
+            <TiltCard className="portfolio-card">
+                <div className="portfolio-image-wrapper">
+                    <Zoom>
+                        <img
+                            src={image}
+                            alt={title}
+                            className="portfolio-image"
+                            loading="lazy"
+                        />
+                    </Zoom>
+                    <div className="portfolio-overlay">
+                        <div className="portfolio-content">
+                            <span className="portfolio-category">{category}</span>
+                            <h3 className="portfolio-title-card">{title}</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </TiltCard>
+        </motion.div>
     );
 };
 
@@ -75,10 +76,15 @@ const Portfolio = () => {
     return (
         <section id="work" className="portfolio-page section-fullscreen">
             <div className="container">
-                <header className="portfolio-header reveal active">
+                <motion.header
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="portfolio-header"
+                >
+                    <h5 className="section-subtitle">Case Studies</h5>
                     <h2 className="section-title">Selected Work</h2>
-                    <p className="section-subtitle">Case Studies & Results</p>
-                </header>
+                </motion.header>
 
                 <div className="portfolio-grid">
                     {portfolioItems.map((item, index) => (
@@ -90,12 +96,18 @@ const Portfolio = () => {
                     ))}
                 </div>
 
-                <div className="portfolio-cta fade-in active delay-500">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                    className="portfolio-cta"
+                >
                     <h3>Ready to scale your business?</h3>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem' }}>
                         <a href="/#contact" className="btn btn--primary">Start a Project</a>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

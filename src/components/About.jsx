@@ -1,42 +1,56 @@
 import React from 'react';
-import { useOnScreen } from '../hooks/useOnScreen';
+import { motion } from 'framer-motion';
 import { useCounter } from '../hooks/useCounter';
 import './About.css';
-import profileImg from '../assets/profile.png'; // Updated to professional portrait
+import profileImg from '../assets/profile.png';
 
 const Stat = ({ end, label, suffix = '', prefix = '' }) => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.5 });
-    // Pass true to shouldAnimate when visible
-    const value = useCounter(end, 2000, 0, isVisible);
-
+    // We'll use a simple inView trigger for the counter
     return (
-        <div className={`stat-card reveal ${isVisible ? 'active' : ''}`} ref={ref}>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="stat-card"
+        >
             <span className="stat-number">
-                {prefix}{Number.isInteger(end) ? Math.floor(value) : value.toFixed(1)}{suffix}
+                {prefix}{end}{suffix}
             </span>
             <span className="stat-label">{label}</span>
-        </div>
+        </motion.div>
     );
 };
 
 const About = () => {
-    const [ref, isVisible] = useOnScreen({ threshold: 0.2 });
-
     return (
-        <section id="about" className="about section-fullscreen" ref={ref}>
+        <section id="about" className="about section-fullscreen">
             <div className="container about__container">
-                <div className={`about__image-column reveal ${isVisible ? 'active' : ''}`}>
-                    <img src={profileImg} alt="Saad Sohail" className="about__image" />
-                    <div className="about__image-decoration"></div>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="about__image-column"
+                >
+                    <div className="about__image-wrapper">
+                        <img src={profileImg} alt="Saad Sohail" className="about__image" />
+                        <div className="about__image-glow"></div>
+                    </div>
+                </motion.div>
 
-                <div className={`about__content reveal ${isVisible ? 'active' : ''}`}>
-                    <h5 className="section-subtitle">My Biography</h5>
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="about__content"
+                >
+                    <h5 className="section-subtitle">Bio</h5>
                     <h2 className="section-title">Who Am I?</h2>
 
                     <div className="about__text">
                         <p>
-                            I am a results-oriented Digital Marketing Manager with over 4 years of experience,
+                            I am a results-oriented <strong>Digital Marketing Manager</strong> with over 4 years of experience,
                             specializing in Meta advertising and email marketing automation.
                         </p>
                         <p>
@@ -56,7 +70,7 @@ const About = () => {
                     <div className="about__actions">
                         <a href="/Saad_Sohail_CV.pdf" download className="btn btn--primary">Download CV</a>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

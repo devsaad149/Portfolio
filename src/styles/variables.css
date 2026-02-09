@@ -1,37 +1,30 @@
 :root {
-    /* Brand Colors */
-    --color-midnight-blue: #1E3A8A;
-    --color-emerald: #10B981;
-    --color-emerald-dark: #059669;
-    --color-gold: #FBBF24;
-    --color-limelight: #84CC16;
+    /* Brand Colors - Elegant Dark Theme */
+    --color-bg-deep: #050505;
+    --color-bg-card: #0a0a0a;
+    --color-accent: #6366f1;
+    /* Indigo */
+    --color-accent-glow: rgba(99, 102, 241, 0.4);
+    --color-violet: #8b5cf6;
 
     /* Neutrals */
-    --color-light-grey: #F3F4F6;
-    --color-white: #FFFFFF;
-    --color-charcoal: #1F2937;
-    --color-grey-medium: #6B7280;
-    --color-border: #D1D5DB;
-
-    /* Legacy Mappings (for compatibility) */
-    --color-black: var(--color-midnight-blue);
-    --color-off-white: var(--color-light-grey);
-    --color-white-pure: var(--color-white);
+    --color-text-bright: #ffffff;
+    --color-text-muted: #a1a1aa;
+    --color-text-dim: #71717a;
+    --color-border: rgba(255, 255, 255, 0.1);
 
     /* Semantic Theme Variables */
-    --bg-primary: var(--color-light-grey);
-    --bg-secondary: var(--color-white);
-    --bg-nav: var(--color-midnight-blue);
+    --bg-primary: var(--color-bg-deep);
+    --bg-secondary: var(--color-bg-card);
+    --bg-nav: rgba(5, 5, 5, 0.8);
 
-    --text-primary: var(--color-charcoal);
-    /* Body text */
-    --text-secondary: var(--color-grey-medium);
-    --text-heading: var(--color-midnight-blue);
-    --text-light: var(--color-white);
+    --text-primary: var(--color-text-bright);
+    --text-secondary: var(--color-text-muted);
+    --text-heading: var(--color-text-bright);
+    --text-light: var(--color-text-bright);
 
-    --accent-primary: var(--color-emerald);
-    --accent-hover: var(--color-emerald-dark);
-    --accent-secondary: var(--color-gold);
+    --accent-primary: var(--color-accent);
+    --accent-hover: var(--color-violet);
     --border-color: var(--color-border);
 
     /* Typography */
