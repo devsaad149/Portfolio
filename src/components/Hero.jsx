@@ -18,12 +18,12 @@ const Hero = () => {
 
     return (
         <section className="hero section-fullscreen" id="home">
-            <Hero3D />
             <div
                 className="hero__background"
-                style={{ transform: `translateY(${offset * 0.4}px)`, opacity: 0.3 }}
+                style={{ transform: `translateY(${offset * 0.4}px)`, opacity: 0.05 }}
             ></div>
-            <div className="hero__overlay"></div>
+            <div className="hero__overlay" style={{ background: 'rgba(0,0,0,0.4)', zIndex: 1 }}></div>
+            <Hero3D />
 
             <div className="hero__content-center">
                 <h1 className="hero__title fade-in-up">Saad Sohail</h1>
