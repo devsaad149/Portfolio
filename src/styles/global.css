@@ -1,27 +1,35 @@
-@import './variables.css';
-@import './animations.css';
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+:root {
+    --font-primary: 'Space Grotesk', sans-serif;
+    --font-heading: 'Syncopate', sans-serif;
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
+    --color-bg: #050505;
+    --color-text: #ffffff;
+    --color-accent: #6366f1;
+    --color-muted: #888888;
+    --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+    font-family: var(--font-primary);
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: dark;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    font-family: var(--font-primary);
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg);
 }
 
 h1,
@@ -30,72 +38,14 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--text-heading);
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
     font-weight: 700;
-    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color var(--transition-fast);
-}
-
-ul {
-    list-style: none;
-}
-
-button {
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-family: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 var(--space-md);
-}
-
-section {
-    position: relative;
-    width: 100%;
-}
-
-.section-fullscreen {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Custom Selection Color */
-::selection {
-    background-color: var(--color-accent);
-    color: #fff;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.btn {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }

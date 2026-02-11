@@ -29,6 +29,8 @@ const Home = () => (
   </main>
 );
 
+import ScrollManager from './components/ScrollManager';
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -50,7 +52,7 @@ function App() {
         alignItems: 'center',
         backgroundColor: '#000',
         color: '#fff',
-        fontFamily: "'Montserrat', sans-serif",
+        fontFamily: "'Syncopate', sans-serif",
         fontSize: '1.5rem',
         letterSpacing: '0.2em'
       }}>
@@ -62,6 +64,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollManager />
         <ThreeScene />
         <ScrollProgress />
         <CustomCursor />
