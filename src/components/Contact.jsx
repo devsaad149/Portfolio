@@ -32,10 +32,10 @@ const Contact = () => {
                     className="contact__info"
                 >
                     <h5 className="section-subtitle">Get in Touch</h5>
-                    <h2 className="section-title">Let's work together</h2>
+                    <h2 className="section-title">Let's Build Your Next Successful Campaign</h2>
                     <p className="contact__text">
-                        Ready to scale your business? Whether you have a project in mind or just want to
-                        chat about digital marketing strategies, I'm here to help.
+                        Ready to scale? Whether you have a project in mind or just want to
+                        chat about strategy, I'm here to help. I usually respond within 24 hours.
                     </p>
 
                     <div className="contact__details">
@@ -84,7 +84,7 @@ const Contact = () => {
                         <textarea name="message" placeholder="Message" required value={formData.message} onChange={handleChange}></textarea>
                     </div>
                     <div className="contact__buttons">
-                        <button type="submit" className="btn btn--primary">Send Email</button>
+                        <button type="submit" className="btn btn--primary">Start a Project</button>
                         <button type="button" onClick={handleWhatsApp} className="btn btn--outline">
                             <MessageSquare size={18} style={{ marginRight: '8px' }} /> Chat on WhatsApp
                         </button>

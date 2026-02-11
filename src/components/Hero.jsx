@@ -16,8 +16,8 @@ const Hero = () => {
         }),
     };
 
-    const title1 = "DIGITAL".split("");
-    const title2 = "MARKETER".split("");
+    const title1 = "REVENUE".split("");
+    const title2 = "DRIVEN".split("");
 
     return (
         <section className="hero-section">
@@ -59,11 +59,8 @@ const Hero = () => {
                     transition={{ delay: 1.5, duration: 1 }}
                     className="hero-sub"
                 >
-                    <p>Driving Growth via Data & Design</p>
-                    <div className="hero-scroll-indicator">
-                        <span>SCROLL</span>
-                        <div className="line"></div>
-                    </div>
+                    <h1 className="hero-headline">I Transform Brands Into Revenue Machines<br />Through Data-Driven Strategies.</h1>
+                    <a href="#contact" className="btn btn--primary hero-cta">Start a Project</a>
                 </motion.div>
             </div>
         </section>

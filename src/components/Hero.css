@@ -7,7 +7,6 @@
     position: relative;
     overflow: hidden;
     padding-top: 10vh;
-    /* Account for header */
 }
 
 .hero-container {
@@ -25,83 +24,59 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .hero-line {
     display: flex;
     overflow: hidden;
-    /* For reveal effect */
-    line-height: 0.9;
+    line-height: 0.85;
 }
 
 .hero-char {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 12vw, 12rem);
+    font-size: clamp(3rem, 11vw, 11rem);
+    /* Slightly smaller to fit REVENUE */
     font-weight: 700;
     color: var(--color-text);
-    /* mix-blend-mode: difference; */
 }
 
 .hero-line.indent {
-    margin-left: 10vw;
-    /* Offset for styling */
+    margin-left: 15vw;
 }
 
 .hero-sub {
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    text-align: center;
 }
 
-.hero-sub p {
+.hero-headline {
     font-family: var(--font-primary);
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    max-width: 600px;
+    line-height: 1.4;
     color: var(--color-muted);
+    text-transform: none;
+    /* Keep natural reading flow */
 }
 
-.hero-scroll-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+.hero-cta {
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
-.hero-scroll-indicator span {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    font-weight: 300;
-}
-
-.hero-scroll-indicator .line {
-    width: 1px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.3);
-    animation: scrollGrow 2s infinite ease-in-out;
-}
-
-@keyframes scrollGrow {
-    0% {
-        height: 0;
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    50% {
-        height: 60px;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        height: 60px;
-        opacity: 0;
-        transform: translateY(60px);
-    }
+.hero-cta:hover {
+    background: white;
+    color: black;
+    border-color: white;
 }
 
 @media (max-width: 768px) {
@@ -110,6 +85,11 @@
     }
 
     .hero-char {
-        font-size: 15vw;
+        font-size: 13vw;
+    }
+
+    .hero-headline {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 }

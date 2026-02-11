@@ -50,20 +50,24 @@ const About = () => {
 
                     <div className="about__text">
                         <p>
-                            I am a results-oriented <strong>Digital Marketing Manager</strong> with over 4 years of experience,
-                            specializing in Meta advertising and email marketing automation.
+                            It started with a curiosity for how brands communicate, but it quickly evolved into an obsession with <strong>measurable growth</strong>.
                         </p>
                         <p>
-                            My expertise lies in developing data-driven strategies that optimize ROAS and drive
-                            sustainable growth. From leading cross-functional teams to managing international
-                            campaigns, I focus on turning complex data into actionable insights effectively.
+                            I don’t just run ads; I engineer <strong>revenue ecosystems</strong>. My philosophy is simple: data dictates the strategy, but creativity drives the conversion.
+                        </p>
+                        <p>
+                            Whether it’s scaling a startup’s first campaign or optimizing a global brand’s ROAS, I focus on one thing—turning meaningful engagement into <strong>tangible business results</strong>.
+                        </p>
+                        <br />
+                        <p style={{ fontStyle: 'italic', color: 'var(--color-accent)' }}>
+                            "I bridge the gap between creative storytelling and hard data."
                         </p>
                     </div>
 
                     <div className="about__stats">
-                        <Stat end={4.5} label="Avg ROAS" suffix="x" />
-                        <Stat end={30} label="Engagement" suffix="%" />
-                        <Stat end={15} label="Growth" suffix="%" />
+                        <Stat end={4.5} label="Avg ROAS" suffix="x" prefix="" />
+                        <Stat end={30} label="Engagement Lift" suffix="%" prefix="+" />
+                        <Stat end={7} label="Figure Revenue" suffix="+" prefix="$" />
                         <Stat end={4} label="Years Exp" suffix="+" />
                     </div>
 

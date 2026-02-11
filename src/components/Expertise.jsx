@@ -13,38 +13,38 @@ import './Expertise.css';
 
 const services = [
     {
-        title: "Meta Advertising",
-        desc: "Advanced targeting and creative strategies to maximize ROAS on Facebook & Instagram.",
+        title: "Paid Acquisition Engines",
+        desc: "Scale your revenue with precision-targeted Meta campaigns that stop the scroll and drive conversions.",
         icon: Target,
         color: "#6366f1"
     },
     {
-        title: "Email Marketing",
-        desc: "Automated flows and segmented campaigns that drive retention and repeat purchases.",
+        title: "Retention Ecosystems",
+        desc: "Turn one-time buyers into lifetime value with automated flows that generate revenue while you sleep.",
         icon: Mail,
         color: "#8b5cf6"
     },
     {
-        title: "Growth Marketing",
-        desc: "Data-driven experiments to identify and scale new channels for user acquisition.",
+        title: "Full-Funnel Growth",
+        desc: "Data-backed experiments to unlock new acquisition channels and layout your entire customer journey.",
         icon: TrendingUp,
         color: "#ec4899"
     },
     {
-        title: "Digital Strategy",
-        desc: "Comprehensive roadmaps aligning digital channels with business objectives.",
+        title: "Strategic Roadmaps",
+        desc: "Clear, actionable blueprints to align your digital channels with tangible business objectives.",
         icon: Lightbulb,
         color: "#f59e0b"
     },
     {
-        title: "Social Media Management",
-        desc: "Engaging content calendars and community management to build brand loyalty.",
+        title: "Brand Authority",
+        desc: "Build a loyal community and commanding presence that positions your brand as the industry leader.",
         icon: Share2,
         color: "#06b6d4"
     },
     {
-        title: "Analytics & Optimization",
-        desc: "Deep dive analysis and A/B testing to continuously improve funnel performance.",
+        title: "Conversion Science",
+        desc: "Eliminate guesswork. Deep-dive analytics to identify leaks and optimize every touchpoint for maximum ROI.",
         icon: BarChart3,
         color: "#10b981"
     }
