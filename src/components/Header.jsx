@@ -74,7 +74,7 @@ const Header = () => {
                                 ))}
                             </div>
                             <div className="mobile-menu-footer">
-                                <a href={cvFile} download className="btn btn--primary">
+                                <a href="/Saad_Sohail_CV.pdf" download className="btn btn--primary">
                                     <DownloadIcon /> Download CV
                                 </a>
                             </div>

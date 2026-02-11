@@ -68,7 +68,7 @@ const About = () => {
                     </div>
 
                     <div className="about__actions">
-                        <a href="/Saad_Sohail_CV.pdf" download className="btn btn--primary">Download CV</a>
+                        <a href="/Saad_Sohail_CV.pdf" download="Saad_Sohail_CV.pdf" className="btn btn--primary">Download CV</a>
                     </div>
                 </motion.div>
             </div>
