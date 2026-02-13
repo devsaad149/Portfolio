@@ -1,0 +1,309 @@
+.social-campaigns-section {
+    position: relative;
+    z-index: 2;
+}
+
+.verified-badge-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #10b981;
+}
+
+.campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 900px) {
+    .campaigns-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.campaign-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.campaign-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.campaign-card.expanded {
+    grid-column: 1 / -1;
+    background: #111;
+    border-color: var(--accent-primary);
+}
+
+.campaign-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.campaign-image-wrapper {
+    height: 250px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.campaign-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.campaign-card:hover .campaign-image {
+    transform: scale(1.05);
+}
+
+.campaign-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.campaign-badges {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.category-badge,
+.platform-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(4px);
+}
+
+.platform-badge {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.campaign-content {
+    padding: 1.5rem;
+}
+
+.campaign-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.campaign-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.campaign-client {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.expand-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.expand-btn:hover {
+    background: white;
+    color: black;
+}
+
+.campaign-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.metric-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+}
+
+.metric-item.highlight {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric-item svg {
+    color: var(--text-secondary);
+}
+
+.metric-item.highlight svg {
+    color: var(--accent-primary);
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.metric-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* Expanded Details */
+.campaign-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+}
+
+@media (max-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-column h4 {
+    font-size: 1rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-column p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.role-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: white !important;
+}
+
+.analytics-preview-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.analytics-preview-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-primary);
+}
+
+.analytics-icon {
+    color: var(--accent-primary);
+}
+
+.maximize-icon {
+    opacity: 0.5;
+}
+
+.analytics-note {
+    font-size: 0.8rem !important;
+    text-align: center;
+    margin-top: 0.75rem;
+    opacity: 0.6;
+}
+
+/* Modal */
+.proof-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+}
+
+.proof-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.proof-image {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.proof-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

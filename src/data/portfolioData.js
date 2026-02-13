@@ -195,6 +195,88 @@ export const portfolioData = {
             videoUrl: "/videos/vorniqo-company.mp4"
         }
     ],
+    socialCampaigns: [
+        {
+            id: 1,
+            title: "HSQ Towers",
+            client: "Vorniqo Solutions",
+            category: "Real Estate",
+            platform: "Instagram, Facebook",
+            duration: "2.5 months",
+            image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1000",
+            proof: "https://placehold.co/600x400?text=HSQ+Analytics+Proof",
+            objective: "Launch premium residential property in Murree/Jhika Gali market. Drive brand awareness and bookings.",
+            strategy: "Lifestyle-first positioning selling dreams, not square footage. Multi-format viral content strategy.",
+            stats: {
+                spend: "Rs 702K+",
+                reach: "1.37M+",
+                impressions: "3.78M+",
+                results: "600+ Bookings"
+            },
+            role: "Campaign Director & Strategist",
+            color: "blue"
+        },
+        {
+            id: 2,
+            title: "Al Hikam Academy",
+            client: "Al Hikam Academy",
+            category: "Education",
+            platform: "Meta Ads",
+            duration: "2024-2025",
+            image: "https://images.unsplash.com/photo-1577896334614-501f22497645?auto=format&fit=crop&q=80&w=1000",
+            proof: "https://placehold.co/600x400?text=Al+Hikam+Analytics+Proof",
+            objective: "Drive enrollment inquiries for Quran education by targeting local parents with value-focused messaging.",
+            strategy: "Pain-point targeting focusing on quality education and qualified teachers. Geo-fenced local delivery.",
+            stats: {
+                spend: "Rs 146K",
+                reach: "448K+",
+                impressions: "689K+",
+                results: "100+ Leads"
+            },
+            role: "Campaign Strategist",
+            color: "green"
+        },
+        {
+            id: 3,
+            title: "Petal Perfection",
+            client: "Petal Perfection",
+            category: "Lifestyle",
+            platform: "Instagram",
+            duration: "Valentine's Season",
+            image: "https://images.unsplash.com/photo-1563241527-30058e1c3e30?auto=format&fit=crop&q=80&w=1000",
+            proof: "https://placehold.co/600x400?text=Petal+Analytics+Proof",
+            objective: "Drive sales during peak season and maintain consistent profile traffic/growth.",
+            strategy: "Visual-first seasonal content with emotional storytelling and urgency-driven offers.",
+            stats: {
+                spend: "Rs 2K+",
+                reach: "5K+",
+                impressions: "6.7K",
+                results: "40% Lift"
+            },
+            role: "Creative Strategist",
+            color: "purple"
+        },
+        {
+            id: 4,
+            title: "Cave de Crave",
+            client: "Cave de Crave",
+            category: "F&B",
+            platform: "Meta Ads",
+            duration: "Grand Opening",
+            image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=1000",
+            proof: "https://placehold.co/600x400?text=Cafe+Analytics+Proof",
+            objective: "Drive foot traffic and initial customer acquisition for grand opening via 'Hot Meals Deal'.",
+            strategy: "High-impact food photography with bold value proposition and direct messaging CTA.",
+            stats: {
+                spend: "Rs 10K",
+                reach: "42K+",
+                impressions: "84K+",
+                results: "270 Convos"
+            },
+            role: "Campaign Manager",
+            color: "orange"
+        }
+    ],
     ooh: [
         {
             id: 1,
