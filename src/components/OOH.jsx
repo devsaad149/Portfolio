@@ -55,8 +55,11 @@ const OOH = () => {
         <section className="ooh-section section-padding">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title text-gradient">Outdoor & Experiential</h2>
-                    <p className="section-subtitle">Brand presence in the physical world.</p>
+                    <h2 className="section-title text-gradient">Social Media Campaign Design</h2>
+                    <p className="section-subtitle">High-impact social content with omnichannel application potential</p>
+                    <p className="section-intro" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                        Strategic social media designs created for maximum visual impact across digital platforms. Each design demonstrates strong composition, typography, and brand messaging that translates effectively across multiple touchpoints.
+                    </p>
                 </div>
 
                 <div className="ooh-list">

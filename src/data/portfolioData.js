@@ -192,38 +192,38 @@ export const portfolioData = {
     ooh: [
         {
             id: 1,
-            title: "Cafe de Crave Storefront Signage",
+            title: "Cafe de Crave Promotional Campaign",
             location: "Capital Plaza, G-11 Markaz",
             image: "/images/ooh/cafe-signage.jpg",
-            specs: "Grand opening promotional signage driving foot traffic"
+            specs: "Grand opening social media campaign with bold visual impact suitable for both digital feeds and potential physical signage."
         },
         {
             id: 2,
-            title: "HSQ Towers Highway Billboard",
+            title: "HSQ Towers Social Campaign - Lifestyle Series",
             location: "Islamabad Expressway",
             image: "/images/ooh/hsq-billboard.jpg",
-            specs: "Premium lifestyle campaign targeting high-net-worth commuters"
+            specs: "Instagram/Facebook campaign showcasing premium lifestyle positioning. Design demonstrates scalability from digital to physical applications."
         },
         {
             id: 3,
-            title: "Khubaib Foundation Event Standee",
+            title: "Khubaib Foundation Event Campaign",
             location: "Charity Gala",
             image: "/images/ooh/khubaib-standee.png",
-            specs: "Orphan education program awareness"
+            specs: "Syria earthquake relief social media campaign supporting live fundraising event. Design translated to physical standee at venue."
         },
         {
             id: 4,
-            title: "Khubaib Foundation Campaign Banner",
+            title: "Khubaib Foundation Advocacy Campaign",
             location: "Multiple Venues",
             image: "/images/ooh/khubaib-banner.png",
-            specs: "Ongoing orphan support program branding"
+            specs: "Ongoing social campaign for orphan support programs with emotional storytelling and clear CTAs."
         },
         {
             id: 5,
-            title: "Vorniqo Solutions Corporate Banner",
+            title: "Vorniqo Solutions Brand Positioning",
             location: "Blue Area, Islamabad",
             image: "/images/ooh/vorniqo-banner.jpg",
-            specs: "Thought leadership positioning on modern office building facade"
+            specs: "B2B thought leadership content establishing software expertise through bold visual statements."
         }
     ],
     brandGuidelines: [
