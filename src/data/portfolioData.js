@@ -208,14 +208,14 @@ export const portfolioData = {
             id: 3,
             title: "Khubaib Foundation Event Standee",
             location: "Charity Gala",
-            image: "/images/ooh/khubaib-standee.jpg",
+            image: "/images/ooh/khubaib-standee.png",
             specs: "Orphan education program awareness"
         },
         {
             id: 4,
             title: "Khubaib Foundation Campaign Banner",
             location: "Multiple Venues",
-            image: "/images/ooh/khubaib-banner.jpg",
+            image: "/images/ooh/khubaib-banner.png",
             specs: "Ongoing orphan support program branding"
         },
         {
