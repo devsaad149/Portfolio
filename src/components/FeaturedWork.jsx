@@ -39,6 +39,12 @@ const FeaturedWork = () => {
                                             src={project.image}
                                             alt={project.title}
                                             className="featured-image"
+                                            style={project.isLogo ? {
+                                                objectFit: 'contain',
+                                                padding: '4rem',
+                                                backgroundColor: '#050505',
+                                                transform: 'scale(1)' // Reset scale to avoid zoom issues
+                                            } : {}}
                                         />
                                         <div className="featured-overlay">
                                             <div className="featured-badges">

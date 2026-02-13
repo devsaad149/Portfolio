@@ -79,15 +79,16 @@
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.featured-image.is-logo {
-    object-fit: contain !important;
-    padding: 3rem;
-    background: #050505;
-    /* Deep black for seamless blend */
+/* Logo styles handled inline for priority */
+.featured-card:hover .featured-image {
+    /* Only scale if not a logo (logo has inline transform: scale(1) that might be overridden if !important is used here, but let's use specificity or just let inline win) */
+    transform: scale(1.05);
 }
 
-.featured-card:hover .featured-image {
-    transform: scale(1.05);
+/* Ensure inline styles for logos take precedence over hover transform if needed */
+.featured-card:hover img[style*="object-fit: contain"] {
+    transform: scale(1.02);
+    /* More subtle zoom for logos if we want it, or scale(1) to disable */
 }
 
 .featured-overlay {
