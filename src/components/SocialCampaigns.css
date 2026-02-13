@@ -280,11 +280,23 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
+.proof-content-scroll {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) var(--bg-card);
+}
+
 .proof-image {
     max-width: 100%;
-    max-height: 80vh;
     display: block;
     border-radius: 8px;
+    margin: 0 auto;
+}
+
+.proof-image.mb-4 {
+    margin-bottom: 2rem;
 }
 
 .close-modal {

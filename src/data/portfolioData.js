@@ -224,7 +224,7 @@ export const portfolioData = {
             platform: "Meta Ads",
             duration: "2024-2025",
             image: "https://images.unsplash.com/photo-1577896334614-501f22497645?auto=format&fit=crop&q=80&w=1000",
-            proof: "https://placehold.co/600x400?text=Al+Hikam+Analytics+Proof",
+            proof: ["/images/analytics/al-hikam-proof-1.jpg", "/images/analytics/al-hikam-proof-2.jpg"],
             objective: "Drive enrollment inquiries for Quran education by targeting local parents with value-focused messaging.",
             strategy: "Pain-point targeting focusing on quality education and qualified teachers. Geo-fenced local delivery.",
             stats: {

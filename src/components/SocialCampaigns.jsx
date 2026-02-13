@@ -183,7 +183,15 @@ const SocialCampaigns = () => {
                             <button className="close-modal" onClick={() => setSelectedProof(null)}>
                                 <X size={24} />
                             </button>
-                            <img src={selectedProof} alt="Analytics Proof" className="proof-image" />
+                            <div className="proof-content-scroll">
+                                {Array.isArray(selectedProof) ? (
+                                    selectedProof.map((proof, index) => (
+                                        <img key={index} src={proof} alt={`Analytics Proof ${index + 1}`} className="proof-image mb-4" />
+                                    ))
+                                ) : (
+                                    <img src={selectedProof} alt="Analytics Proof" className="proof-image" />
+                                )}
+                            </div>
                             <div className="proof-caption">
                                 <CheckCircle size={16} className="text-green-500" />
                                 Verified Platform Data
