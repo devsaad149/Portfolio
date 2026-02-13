@@ -48,8 +48,27 @@ const VideoDirection = () => {
                                 className="video-card"
                                 onClick={() => setSelectedVideo(item)}
                             >
-                                <div className="video-thumbnail-wrapper">
-                                    <img src={item.thumbnail} alt={item.title} className="video-thumbnail" />
+                                <div
+                                    className="video-thumbnail-wrapper"
+                                    onMouseEnter={(e) => e.currentTarget.querySelector('video').play()}
+                                    onMouseLeave={(e) => {
+                                        const v = e.currentTarget.querySelector('video');
+                                        v.pause();
+                                        v.currentTime = 0;
+                                    }}
+                                >
+                                    {item.videoUrl ? (
+                                        <video
+                                            src={item.videoUrl}
+                                            className="video-thumbnail"
+                                            muted
+                                            loop
+                                            playsInline
+                                            preload="metadata"
+                                        />
+                                    ) : (
+                                        <img src={item.thumbnail} alt={item.title} className="video-thumbnail" />
+                                    )}
                                     <div className="play-overlay">
                                         <div className="play-btn-circle">
                                             <Play fill="white" size={24} />
