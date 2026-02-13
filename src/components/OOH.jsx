@@ -1,0 +1,72 @@
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { MapPin, Maximize } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
+import './OOH.css';
+
+const OOHItem = ({ item, index }) => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
+
+    const isEven = index % 2 === 0;
+
+    return (
+        <div ref={ref} className={`ooh-item ${isEven ? 'even' : 'odd'}`}>
+            <motion.div style={{ y, opacity }} className="ooh-image-container">
+                <img src={item.image} alt={item.title} className="ooh-image" />
+                <div className="ooh-overlay">
+                    <div className="ooh-specs">
+                        <Maximize size={16} />
+                        <span>{item.specs}</span>
+                    </div>
+                </div>
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="ooh-content"
+            >
+                <span className="ooh-index">0{index + 1}</span>
+                <h3 className="ooh-title">{item.title}</h3>
+                <div className="ooh-location">
+                    <MapPin size={18} className="text-accent" />
+                    <span>{item.location}</span>
+                </div>
+                <p className="ooh-desc">
+                    High-impact visual dominance in a key urban environment. Designed to capture attention within a 3-second viewing window.
+                </p>
+            </motion.div>
+        </div>
+    );
+};
+
+const OOH = () => {
+    const { ooh } = portfolioData;
+
+    return (
+        <section className="ooh-section section-padding">
+            <div className="container">
+                <div className="section-header">
+                    <h2 className="section-title text-gradient">Outdoor & Experiential</h2>
+                    <p className="section-subtitle">Brand presence in the physical world.</p>
+                </div>
+
+                <div className="ooh-list">
+                    {ooh.map((item, index) => (
+                        <OOHItem key={item.id} item={item} index={index} />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default OOH;

@@ -1,77 +1,60 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Calendar } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
 import './Experience.css';
 
-const ExperienceItem = ({ role, company, date, points, items, index }) => {
+const TimelineItem = ({ item, index }) => {
+    const isLeft = index % 2 === 0;
+
     return (
-        <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="timeline-item"
-        >
+        <div className={`timeline-item ${isLeft ? 'left' : 'right'}`}>
+            <motion.div
+                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="timeline-content glass-panel"
+            >
+                <div className="timeline-header">
+                    <h3 className="role-title">{item.role}</h3>
+                    <span className="company-name text-gradient">{item.company}</span>
+                </div>
+
+                <div className="timeline-meta">
+                    <Calendar size={14} />
+                    <span>{item.period}</span>
+                </div>
+
+                <ul className="timeline-achievements">
+                    {item.achievements.map((achievement, i) => (
+                        <li key={i}>{achievement}</li>
+                    ))}
+                </ul>
+            </motion.div>
+
             <div className="timeline-dot">
                 <Briefcase size={16} />
             </div>
-            <div className="timeline-content">
-                <span className="timeline-date">{date}</span>
-                <h3 className="timeline-role">{role}</h3>
-                <h4 className="timeline-company">{company}</h4>
-                <div className="timeline-desc">
-                    <ul>
-                        {(points || items || []).map((p, i) => <li key={i}>{p}</li>)}
-                    </ul>
-                </div>
-            </div>
-        </motion.div>
+        </div>
     );
 };
 
 const Experience = () => {
+    const { experience } = portfolioData;
+
     return (
-        <section id="experience" className="experience">
+        <section className="experience-section section-padding">
             <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="section-header"
-                >
-                    <h5 className="section-subtitle">Career Path</h5>
-                    <h2 className="section-title">Professional Experience</h2>
-                </motion.div>
+                <div className="section-header">
+                    <h2 className="section-title text-gradient">Professional Journey</h2>
+                    <p className="section-subtitle">Experience that shapes my perspective.</p>
+                </div>
 
                 <div className="timeline-container">
                     <div className="timeline-line"></div>
-                    <div className="timeline-items">
-                        <ExperienceItem
-                            index={0}
-                            role="Marketing Manager"
-                            company="Vorniqo Solutions"
-                            date="Nov 2025 - Present"
-                            items={[
-                                "Develop and oversee integrated digital marketing strategies.",
-                                "Lead cross-functional teams for multi-channel campaigns.",
-                                "Analyze performance data to track KPIs and maximize ROAS."
-                            ]}
-                        />
-
-                        <ExperienceItem
-                            index={1}
-                            role="Marketing Specialist"
-                            company="Evertise AI PR"
-                            date="Apr 2021 - Oct 2024"
-                            items={[
-                                "Managed international Meta ad campaigns with 4.5x average ROAS.",
-                                "Increased email engagement rates by 30% through automation.",
-                                "Led digital outreach initiatives for Khubaiib Foundation.",
-                                "Executed targeted campaigns for Deenar Marketing and BizBuzz Agency.",
-                                "Mentored junior marketers on best practices."
-                            ]}
-                        />
-                    </div>
+                    {experience.map((item, index) => (
+                        <TimelineItem key={item.id} item={item} index={index} />
+                    ))}
                 </div>
             </div>
         </section>

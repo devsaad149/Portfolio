@@ -1,30 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowDown } from 'lucide-react';
+import '../styles/global.css';
 import './Hero.css';
+import { portfolioData } from '../data/portfolioData';
 
 const Hero = () => {
+    const { name, title, subtitle, cta } = portfolioData.hero;
+
     const letterAnim = {
         hidden: { y: 100, opacity: 0 },
         visible: (i) => ({
             y: 0,
             opacity: 1,
             transition: {
-                delay: i * 0.1,
-                duration: 1,
+                delay: i * 0.05,
+                duration: 0.8,
                 ease: [0.2, 0.65, 0.3, 0.9],
             },
         }),
     };
 
-    const title1 = "REVENUE".split("");
-    const title2 = "DRIVEN".split("");
+    const nameChars = name.split("");
 
     return (
         <section className="hero-section">
-            <div className="hero-container">
-                <div className="hero-text-wrapper">
-                    <div className="hero-line">
-                        {title1.map((char, index) => (
+            <div className="container hero-container">
+                <div className="hero-content">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="hero-intro"
+                    >
+                        <span className="hero-greeting">Hello, I'm</span>
+                    </motion.div>
+
+                    <h1 className="hero-name">
+                        {nameChars.map((char, index) => (
                             <motion.span
                                 key={index}
                                 custom={index}
@@ -33,34 +46,49 @@ const Hero = () => {
                                 animate="visible"
                                 className="hero-char"
                             >
-                                {char}
+                                {char === " " ? "\u00A0" : char}
                             </motion.span>
                         ))}
-                    </div>
-                    <div className="hero-line indent">
-                        {title2.map((char, index) => (
-                            <motion.span
-                                key={index}
-                                custom={index + title1.length}
-                                variants={letterAnim}
-                                initial="hidden"
-                                animate="visible"
-                                className="hero-char"
-                            >
-                                {char}
-                            </motion.span>
-                        ))}
-                    </div>
+                    </h1>
+
+                    <motion.h2
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                        className="hero-title text-gradient"
+                    >
+                        {title}
+                    </motion.h2>
+
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 0.8 }}
+                        className="hero-subtitle"
+                    >
+                        {subtitle}
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1, duration: 0.8 }}
+                        className="hero-cta-wrapper"
+                    >
+                        <a href="#work" className="btn-primary hover-lift">
+                            {cta}
+                        </a>
+                    </motion.div>
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1 }}
-                    className="hero-sub"
+                    className="scroll-indicator"
                 >
-                    <h1 className="hero-headline">I Transform Brands Into Revenue Machines<br />Through Data-Driven Strategies.</h1>
-                    <a href="#contact" className="btn btn--primary hero-cta">Start a Project</a>
+                    <span>Scroll to Explore</span>
+                    <ArrowDown className="animate-bounce" size={20} />
                 </motion.div>
             </div>
         </section>

@@ -1,35 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
-
 :root {
-    --font-primary: 'Space Grotesk', sans-serif;
-    --font-heading: 'Syncopate', sans-serif;
-
-    --color-bg: #050505;
-    --color-text: #ffffff;
-    --color-accent: #6366f1;
-    --color-muted: #888888;
-    --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-
-    font-family: var(--font-primary);
-    line-height: 1.5;
-    font-weight: 400;
-
-    color-scheme: dark;
-    color: var(--color-text);
-    background-color: var(--color-bg);
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    --bg-dark: #050505;
+    --bg-card: #0a0a0a;
+    --bg-card-hover: #141414;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --accent-primary: #3b82f6;
+    /* Blue */
+    --accent-secondary: #8b5cf6;
+    /* Purple */
+    --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-blur: 10px;
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    /* Modern Sans */
+    --font-body: 'Inter', sans-serif;
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    width: 100%;
     overflow-x: hidden;
-    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -39,13 +35,137 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    text-transform: uppercase;
     font-weight: 700;
     letter-spacing: -0.02em;
+    margin: 0;
 }
 
-.btn {
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Utilities */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+.section-padding {
+    padding: 6rem 0;
+}
+
+.text-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+}
+
+.hover-lift {
+    transition: var(--transition-smooth);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
 }

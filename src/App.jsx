@@ -1,83 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Experience from './components/Experience';
-import Achievements from './components/Achievements';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
-import ScrollProgress from './components/ScrollProgress';
-import CaseStudies from './components/CaseStudies';
-
-import Portfolio from './components/Portfolio';
+import React, { useEffect } from 'react';
+import { ReactLenis } from '@studio-freight/react-lenis';
 import ThreeScene from './components/ThreeScene';
-
-const Home = () => (
-  <main>
-    <Hero />
-    <About />
-    <Services />
-    <Portfolio />
-    <Experience />
-    <Achievements />
-    <Education />
-    <Contact />
-  </main>
-);
-
-import ScrollManager from './components/ScrollManager';
+import Hero from './components/Hero';
+import FeaturedWork from './components/FeaturedWork';
+import SocialMedia from './components/SocialMedia';
+import VideoDirection from './components/VideoDirection';
+import OOH from './components/OOH';
+import BrandGuidelines from './components/BrandGuidelines';
+import CaseStudies from './components/CaseStudies';
+import Expertise from './components/Expertise';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
+import ScrollProgress from './components/ScrollProgress';
+import CustomCursor from './components/CustomCursor';
+import './App.css';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <div style={{
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#000',
-        color: '#fff',
-        fontFamily: "'Syncopate', sans-serif",
-        fontSize: '1.5rem',
-        letterSpacing: '0.2em'
-      }}>
-        LOADING...
-      </div>
-    );
-  }
-
   return (
-    <Router>
+    <ReactLenis root>
       <div className="App">
-        <ScrollManager />
-        <ThreeScene />
-        <ScrollProgress />
         <CustomCursor />
-        <Header />
+        <ScrollProgress />
+        <ThreeScene />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-        </Routes>
-
-        <Footer />
+        <main>
+          <Hero />
+          <FeaturedWork />
+          <SocialMedia />
+          <VideoDirection />
+          <OOH />
+          <BrandGuidelines />
+          <CaseStudies />
+          <Expertise />
+          <Experience />
+          <Contact />
+        </main>
       </div>
-    </Router>
+    </ReactLenis>
   );
 }
 
