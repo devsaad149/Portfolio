@@ -192,38 +192,38 @@ export const portfolioData = {
     ooh: [
         {
             id: 1,
-            title: "City Center Takeover",
-            location: "New York Times Square",
-            image: "https://images.unsplash.com/photo-1542206395-9feb1621434d?auto=format&fit=crop&q=80&w=2000",
-            specs: "Digital Billboard 40x80ft"
+            title: "Cafe de Crave Storefront Signage",
+            location: "Capital Plaza, G-11 Markaz",
+            image: "/images/ooh/cafe-signage.jpg",
+            specs: "Grand opening promotional signage driving foot traffic"
         },
         {
             id: 2,
-            title: "Subway Station Domination",
-            location: "London Underground",
-            image: "https://images.unsplash.com/photo-1563292706-96c813a07727?auto=format&fit=crop&q=80&w=2000",
-            specs: "Full Station Wrap"
+            title: "HSQ Towers Highway Billboard",
+            location: "Islamabad Expressway",
+            image: "/images/ooh/hsq-billboard.jpg",
+            specs: "Premium lifestyle campaign targeting high-net-worth commuters"
         },
         {
             id: 3,
-            title: "Airport Digital Network",
-            location: "Dubai International",
-            image: "https://images.unsplash.com/photo-1574268686617-64b1848b788c?auto=format&fit=crop&q=80&w=2000",
-            specs: "Network of 50 Screens"
+            title: "Khubaib Foundation Event Standee",
+            location: "Charity Gala",
+            image: "/images/ooh/khubaib-standee.jpg",
+            specs: "Orphan education program awareness"
         },
         {
             id: 4,
-            title: "Highway Mega Board",
-            location: "Los Angeles I-5",
-            image: "https://images.unsplash.com/photo-1552596489-32204c321d5c?auto=format&fit=crop&q=80&w=2000",
-            specs: "Static Bulletin 14x48"
+            title: "Khubaib Foundation Campaign Banner",
+            location: "Multiple Venues",
+            image: "/images/ooh/khubaib-banner.jpg",
+            specs: "Ongoing orphan support program branding"
         },
         {
             id: 5,
-            title: "Mall Atrium Event",
-            location: "Westfield Sydney",
-            image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000",
-            specs: "Interactive Installation"
+            title: "Vorniqo Solutions Corporate Banner",
+            location: "Blue Area, Islamabad",
+            image: "/images/ooh/vorniqo-banner.jpg",
+            specs: "Thought leadership positioning on modern office building facade"
         }
     ],
     brandGuidelines: [
