@@ -113,9 +113,24 @@ const VideoDirection = () => {
                                     </div>
 
                                     <div className="director-notes">
-                                        <h3><Film size={18} /> Director's Notes</h3>
-                                        <p>{selectedVideo.description}</p>
-                                        <p>Focused on creating a cinematic atmosphere that aligns with the brand's luxury positioning.</p>
+                                        <div className="director-notes">
+                                            <h3><Film size={18} /> Director's Notes</h3>
+
+                                            <div className="note-section">
+                                                <h4 className="text-accent">The Brief</h4>
+                                                <p>{selectedVideo.brief}</p>
+                                            </div>
+
+                                            <div className="note-section">
+                                                <h4 className="text-accent">Creative Approach</h4>
+                                                <p>{selectedVideo.approach}</p>
+                                            </div>
+
+                                            <div className="note-section">
+                                                <h4 className="text-accent">Key Results</h4>
+                                                <p>{selectedVideo.results}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

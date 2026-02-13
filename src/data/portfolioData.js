@@ -55,19 +55,129 @@ export const portfolioData = {
         objective: "Drive engagement and innovative brand awareness.",
         metrics: { reach: "1.2M", engagement: "8.5%", conversion: "3.2%" }
     })),
-    videoDirection: Array.from({ length: 15 }, (_, i) => ({
-        id: i + 1,
-        title: `Video Project ${i + 1}`,
-        client: `Studio ${["One", "Two", "Three"][i % 3]}`,
-        category: ["Property Showcases", "Brand Stories", "Social Reels", "Commercial Ads"][i % 4],
-        thumbnail: `https://images.unsplash.com/photo-${[
-            "1492691527719-9d1e07e534b4",
-            "1536240478700-b869070f9279",
-            "1574717436420-ee9225433d74"
-        ][i % 3]}?auto=format&fit=crop&q=80&w=1000`,
-        duration: "1:30",
-        description: "Conceptualization, storyboard, and on-set direction for high-impact commercial."
-    })),
+    videoDirection: [
+        {
+            id: 1,
+            title: "Address Fountain - Luxury Living",
+            client: "Al Zafar Builders",
+            category: "Property Showcases",
+            thumbnail: "https://images.unsplash.com/photo-1600596542815-2a429fe536e9?auto=format&fit=crop&q=80&w=1000",
+            duration: "1:30",
+            brief: "Showcase Address Fountain luxury apartments to high-end buyers, highlighting premium amenities and location advantages.",
+            approach: "Cinematic property walkthrough focusing on lifestyle aspirations, combined with testimonial-style messaging to build trust and desire.",
+            results: "High engagement on social media, generated qualified leads for premium units."
+        },
+        {
+            id: 2,
+            title: "Address Fountain - Investment",
+            client: "Nouman Builder",
+            category: "Property Showcases",
+            thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
+            duration: "1:45",
+            brief: "Position Address Fountain as prime investment opportunity, emphasizing ROI potential and payment flexibility.",
+            approach: "Investment-focused narrative highlighting location appreciation, payment plans, and future value proposition.",
+            results: "Attracted investor inquiries and booking consultations."
+        },
+        {
+            id: 3,
+            title: "Al Zafar Brand Story",
+            client: "Al Zafar Builders",
+            category: "Brand Stories",
+            thumbnail: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000",
+            duration: "2:10",
+            brief: "Establish Al Zafar Builders as trusted real estate developer with proven track record.",
+            approach: "Brand credibility video showcasing completed projects, construction quality, and customer satisfaction.",
+            results: "Enhanced brand perception and trust among potential buyers."
+        },
+        {
+            id: 4,
+            title: "Destination Discovery",
+            client: "Hidden Hideouts",
+            category: "Social Reels",
+            thumbnail: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1000",
+            duration: "0:45",
+            brief: "Showcase unique travel destination to inspire bookings and build brand awareness.",
+            approach: "Immersive visual storytelling highlighting location beauty, experiences, and peaceful escape from city life.",
+            results: "Increased profile engagement and booking inquiries."
+        },
+        {
+            id: 5,
+            title: "Experience the Journey",
+            client: "Hidden Hideouts",
+            category: "Social Reels",
+            thumbnail: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1000",
+            duration: "0:50",
+            brief: "Create emotional connection with travelers seeking unique experiences.",
+            approach: "Cinematic travel content emphasizing adventure, relaxation, and memorable moments.",
+            results: "Strong social media engagement and brand following growth."
+        },
+        {
+            id: 6,
+            title: "HSQ Towers Call to Action",
+            client: "HSQ Towers",
+            category: "Commercial Ads",
+            thumbnail: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=1000",
+            duration: "0:30",
+            brief: "Drive immediate action for property bookings with limited-time offer.",
+            approach: "High-energy reel with strong CTA, urgency messaging, and clear booking instructions.",
+            results: "Generated 50+ direct inquiries within first week of campaign."
+        },
+        {
+            id: 7,
+            title: "HSQ Towers Reach Campaign",
+            client: "HSQ Towers",
+            category: "Commercial Ads",
+            thumbnail: "https://images.unsplash.com/photo-1431576979088-e820c74fb78a?auto=format&fit=crop&q=80&w=1000",
+            duration: "1:00",
+            brief: "Maximize reach and brand visibility in target market.",
+            approach: "Broad-appeal content highlighting lifestyle benefits, modern design, and convenient location.",
+            results: "Achieved 100K+ reach, highest-performing video in campaign."
+        },
+        {
+            id: 8,
+            title: "Lifestyle Showcase",
+            client: "HSQ Towers",
+            category: "Social Reels",
+            thumbnail: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1000",
+            duration: "0:55",
+            brief: "Convert awareness into qualified leads through aspirational lifestyle content.",
+            approach: "Premium lifestyle positioning with focus on modern amenities, community features, and investment value.",
+            results: "150K+ reach, 5K+ engagements, 80+ qualified leads."
+        },
+        {
+            id: 9,
+            title: "Wedding Videography Portfolio",
+            client: "MG Studios",
+            category: "Brand Stories",
+            thumbnail: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000",
+            duration: "2:30",
+            brief: "Showcase videography quality to attract wedding bookings.",
+            approach: "Emotional storytelling highlighting cinematic wedding moments and production quality.",
+            results: "Increased inquiries during peak wedding season."
+        },
+        {
+            id: 10,
+            title: "AI-Powered Real Estate Innovation",
+            client: "Vorniqo Solutions",
+            category: "Brand Stories",
+            thumbnail: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000",
+            duration: "1:15",
+            brief: "Position Vorniqo as innovative, tech-forward real estate solutions provider.",
+            approach: "Showcased AI-generated property visualizations and modern marketing approach to differentiate from traditional developers.",
+            results: "Enhanced brand positioning as industry innovator."
+        },
+        {
+            id: 11,
+            title: "Vorniqo Company Overview",
+            client: "Vorniqo Solutions",
+            category: "Brand Stories",
+            thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000",
+            duration: "3:00",
+            brief: "Communicate Vorniqo's multi-brand portfolio and comprehensive real estate solutions.",
+            approach: "Corporate storytelling showcasing breadth of services, completed projects, and client success stories.",
+            results: "Established credibility with B2B clients and property investors."
+        }
+    ],
     ooh: [
         {
             id: 1,
