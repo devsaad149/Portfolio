@@ -15,10 +15,11 @@ export const portfolioData = {
             role: "Marketing Manager",
             duration: "Apr 2021 - Oct 2024",
             type: "Digital Agency",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000",
+            image: "/images/projects/evertise-logo.jpg",
             brief: "Led marketing operations for digital agency serving 8+ international clients. Managed global portfolios, directed cross-functional teams, and drove business development while pursuing full-time education.",
             metrics: ["95% Retention", "8+ Int'l Clients", "Multi-Industry"],
-            tags: ["Business Dev", "Team Leadership", "Global Strategy"]
+            tags: ["Business Dev", "Team Leadership", "Global Strategy"],
+            isLogo: true
         },
         {
             id: 2,
@@ -27,10 +28,11 @@ export const portfolioData = {
             role: "Marketing Manager",
             duration: "Nov 2025 - Present",
             type: "Real Estate Developer",
-            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
+            image: "/images/projects/vorniqo-logo.jpg",
             brief: "Established complete marketing infrastructure for 5+ property brands. Built team of 5, directed 20+ video campaigns, and executed performance marketing driving 600+ bookings in 3 months.",
             metrics: ["999K+ Views", "600+ Bookings", "5 Brands"],
-            tags: ["Video Direction", "Rapid Scale-Up", "ROI Marketing"]
+            tags: ["Video Direction", "Rapid Scale-Up", "ROI Marketing"],
+            isLogo: true
         },
         {
             id: 3,
