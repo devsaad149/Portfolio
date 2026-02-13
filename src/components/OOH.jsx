@@ -20,12 +20,6 @@ const OOHItem = ({ item, index }) => {
         <div ref={ref} className={`ooh-item ${isEven ? 'even' : 'odd'}`}>
             <motion.div style={{ y, opacity }} className="ooh-image-container">
                 <img src={item.image} alt={item.title} className="ooh-image" />
-                <div className="ooh-overlay">
-                    <div className="ooh-specs">
-                        <Maximize size={16} />
-                        <span>{item.specs}</span>
-                    </div>
-                </div>
             </motion.div>
 
             <motion.div
@@ -36,13 +30,7 @@ const OOHItem = ({ item, index }) => {
             >
                 <span className="ooh-index">0{index + 1}</span>
                 <h3 className="ooh-title">{item.title}</h3>
-                <div className="ooh-location">
-                    <MapPin size={18} className="text-accent" />
-                    <span>{item.location}</span>
-                </div>
-                <p className="ooh-desc">
-                    High-impact visual dominance in a key urban environment. Designed to capture attention within a 3-second viewing window.
-                </p>
+                <p className="ooh-desc">{item.specs}</p>
             </motion.div>
         </div>
     );
