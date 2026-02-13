@@ -264,7 +264,7 @@ export const portfolioData = {
             platform: "Meta Ads",
             duration: "Grand Opening",
             image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=1000",
-            proof: "https://placehold.co/600x400?text=Cafe+Analytics+Proof",
+            proof: "/images/analytics/cafe-proof.jpg",
             objective: "Drive foot traffic and initial customer acquisition for grand opening via 'Hot Meals Deal'.",
             strategy: "High-impact food photography with bold value proposition and direct messaging CTA.",
             stats: {
