@@ -90,11 +90,24 @@ const VideoDirection = () => {
 
                             <div className="video-modal-grid">
                                 <div className="video-player-col">
-                                    {/* Placeholder for actual video player */}
-                                    <div className="video-player-placeholder">
-                                        <Play size={48} className="text-secondary" />
-                                        <p>Video Player Placeholder</p>
-                                    </div>
+                                    {selectedVideo.videoUrl ? (
+                                        <div className="video-wrapper">
+                                            <video
+                                                controls
+                                                autoPlay
+                                                src={selectedVideo.videoUrl}
+                                                poster={selectedVideo.thumbnail}
+                                                className="modal-video"
+                                            >
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    ) : (
+                                        <div className="video-player-placeholder">
+                                            <Play size={48} className="text-secondary" />
+                                            <p>Video Coming Soon</p>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="video-details-col">

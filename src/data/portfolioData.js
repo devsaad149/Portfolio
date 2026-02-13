@@ -65,7 +65,8 @@ export const portfolioData = {
             duration: "1:30",
             brief: "Showcase Address Fountain luxury apartments to high-end buyers, highlighting premium amenities and location advantages.",
             approach: "Cinematic property walkthrough focusing on lifestyle aspirations, combined with testimonial-style messaging to build trust and desire.",
-            results: "High engagement on social media, generated qualified leads for premium units."
+            results: "High engagement on social media, generated qualified leads for premium units.",
+            videoUrl: "/videos/address-fountain-luxury.mp4"
         },
         {
             id: 2,
@@ -76,7 +77,8 @@ export const portfolioData = {
             duration: "1:45",
             brief: "Position Address Fountain as prime investment opportunity, emphasizing ROI potential and payment flexibility.",
             approach: "Investment-focused narrative highlighting location appreciation, payment plans, and future value proposition.",
-            results: "Attracted investor inquiries and booking consultations."
+            results: "Attracted investor inquiries and booking consultations.",
+            videoUrl: "/videos/address-fountain-investment.mp4"
         },
         {
             id: 3,
@@ -87,7 +89,8 @@ export const portfolioData = {
             duration: "2:10",
             brief: "Establish Al Zafar Builders as trusted real estate developer with proven track record.",
             approach: "Brand credibility video showcasing completed projects, construction quality, and customer satisfaction.",
-            results: "Enhanced brand perception and trust among potential buyers."
+            results: "Enhanced brand perception and trust among potential buyers.",
+            videoUrl: "/videos/al-zafar-brand-story.mp4"
         },
         {
             id: 4,
@@ -98,7 +101,8 @@ export const portfolioData = {
             duration: "0:45",
             brief: "Showcase unique travel destination to inspire bookings and build brand awareness.",
             approach: "Immersive visual storytelling highlighting location beauty, experiences, and peaceful escape from city life.",
-            results: "Increased profile engagement and booking inquiries."
+            results: "Increased profile engagement and booking inquiries.",
+            videoUrl: "/videos/destination-discovery.mp4"
         },
         {
             id: 5,
@@ -109,7 +113,8 @@ export const portfolioData = {
             duration: "0:50",
             brief: "Create emotional connection with travelers seeking unique experiences.",
             approach: "Cinematic travel content emphasizing adventure, relaxation, and memorable moments.",
-            results: "Strong social media engagement and brand following growth."
+            results: "Strong social media engagement and brand following growth.",
+            videoUrl: "/videos/experience-the-journey.mp4"
         },
         {
             id: 6,
@@ -120,7 +125,8 @@ export const portfolioData = {
             duration: "0:30",
             brief: "Drive immediate action for property bookings with limited-time offer.",
             approach: "High-energy reel with strong CTA, urgency messaging, and clear booking instructions.",
-            results: "Generated 50+ direct inquiries within first week of campaign."
+            results: "Generated 50+ direct inquiries within first week of campaign.",
+            videoUrl: "/videos/hsq-cta.mp4"
         },
         {
             id: 7,
@@ -131,7 +137,8 @@ export const portfolioData = {
             duration: "1:00",
             brief: "Maximize reach and brand visibility in target market.",
             approach: "Broad-appeal content highlighting lifestyle benefits, modern design, and convenient location.",
-            results: "Achieved 100K+ reach, highest-performing video in campaign."
+            results: "Achieved 100K+ reach, highest-performing video in campaign.",
+            videoUrl: "/videos/hsq-reach.mp4"
         },
         {
             id: 8,
@@ -142,7 +149,8 @@ export const portfolioData = {
             duration: "0:55",
             brief: "Convert awareness into qualified leads through aspirational lifestyle content.",
             approach: "Premium lifestyle positioning with focus on modern amenities, community features, and investment value.",
-            results: "150K+ reach, 5K+ engagements, 80+ qualified leads."
+            results: "150K+ reach, 5K+ engagements, 80+ qualified leads.",
+            videoUrl: "/videos/lifestyle-showcase.mp4"
         },
         {
             id: 9,
@@ -153,7 +161,8 @@ export const portfolioData = {
             duration: "2:30",
             brief: "Showcase videography quality to attract wedding bookings.",
             approach: "Emotional storytelling highlighting cinematic wedding moments and production quality.",
-            results: "Increased inquiries during peak wedding season."
+            results: "Increased inquiries during peak wedding season.",
+            videoUrl: "/videos/wedding-portfolio.mp4"
         },
         {
             id: 10,
@@ -164,7 +173,8 @@ export const portfolioData = {
             duration: "1:15",
             brief: "Position Vorniqo as innovative, tech-forward real estate solutions provider.",
             approach: "Showcased AI-generated property visualizations and modern marketing approach to differentiate from traditional developers.",
-            results: "Enhanced brand positioning as industry innovator."
+            results: "Enhanced brand positioning as industry innovator.",
+            videoUrl: "/videos/vorniqo-ai.mp4"
         },
         {
             id: 11,
@@ -175,7 +185,8 @@ export const portfolioData = {
             duration: "3:00",
             brief: "Communicate Vorniqo's multi-brand portfolio and comprehensive real estate solutions.",
             approach: "Corporate storytelling showcasing breadth of services, completed projects, and client success stories.",
-            results: "Established credibility with B2B clients and property investors."
+            results: "Established credibility with B2B clients and property investors.",
+            videoUrl: "/videos/vorniqo-company.mp4"
         }
     ],
     ooh: [
