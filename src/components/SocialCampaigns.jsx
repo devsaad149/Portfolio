@@ -37,8 +37,8 @@ const SocialCampaigns = () => {
         <section id="social-campaigns" className="social-campaigns-section section-padding">
             <div className="container">
                 <div className="section-header text-center mb-16">
-                    <h2 className="section-title text-gradient">Social Media Performance</h2>
-                    <p className="section-subtitle">Data-driven campaigns with measurable business impact.</p>
+                    <h2 className="section-title text-gradient">Campaign Strategy</h2>
+                    <p className="section-subtitle">Data-driven approaches with measurable business impact.</p>
                     <div className="verified-badge-header">
                         <CheckCircle size={16} className="text-green-500" />
                         <span>All metrics verified by platform analytics</span>
@@ -133,9 +133,6 @@ const SocialCampaigns = () => {
                                             <div className="detail-column">
                                                 <h4>Objective</h4>
                                                 <p>{campaign.objective}</p>
-
-                                                <h4>Strategy</h4>
-                                                <p>{campaign.strategy}</p>
 
                                                 <h4>My Role</h4>
                                                 <p className="role-tag">{campaign.role}</p>
