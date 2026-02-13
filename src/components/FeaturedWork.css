@@ -79,6 +79,13 @@
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.featured-image.is-logo {
+    object-fit: contain !important;
+    padding: 3rem;
+    background: #050505;
+    /* Deep black for seamless blend */
+}
+
 .featured-card:hover .featured-image {
     transform: scale(1.05);
 }
