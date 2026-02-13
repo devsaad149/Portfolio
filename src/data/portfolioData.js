@@ -204,7 +204,7 @@ export const portfolioData = {
             platform: "Instagram, Facebook",
             duration: "2.5 months",
             image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1000",
-            proof: "https://placehold.co/600x400?text=HSQ+Analytics+Proof",
+            proof: "/images/analytics/hsq-proof.jpg",
             objective: "Launch premium residential property in Murree/Jhika Gali market. Drive brand awareness and bookings.",
             strategy: "Lifestyle-first positioning selling dreams, not square footage. Multi-format viral content strategy.",
             stats: {
