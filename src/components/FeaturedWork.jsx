@@ -30,6 +30,7 @@ const FeaturedWork = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.6 }}
+                            className="featured-item"
                         >
                             <TiltCard className="featured-card-wrapper">
                                 <div className="featured-card">
@@ -40,21 +41,33 @@ const FeaturedWork = () => {
                                             className="featured-image"
                                         />
                                         <div className="featured-overlay">
-                                            <div className="featured-metrics">
-                                                <span className="metric-value">{project.metrics}</span>
+                                            <div className="featured-badges">
+                                                {project.metrics.slice(0, 3).map((metric, i) => (
+                                                    <span key={i} className="metric-badge">{metric}</span>
+                                                ))}
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="featured-content">
-                                        <div className="featured-info">
-                                            <span className="featured-client">{project.client}</span>
+                                        <div className="featured-header">
+                                            <div className="featured-meta">
+                                                <span className="featured-role">{project.role}</span>
+                                                <span className="featured-dot">•</span>
+                                                <span className="featured-duration">{project.duration}</span>
+                                            </div>
                                             <h3 className="featured-title">{project.title}</h3>
-                                            <span className="featured-type">{project.type}</span>
+                                            <span className="featured-subtitle">{project.subtitle}</span>
                                         </div>
-                                        <button className="featured-btn">
-                                            <ArrowUpRight size={24} />
-                                        </button>
+
+                                        <p className="featured-brief">{project.brief}</p>
+
+                                        <div className="featured-footer">
+                                            <button className="view-case-study-btn">
+                                                View Full Case Study
+                                                <ArrowUpRight size={18} />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </TiltCard>

@@ -10,35 +10,51 @@ export const portfolioData = {
     featuredWork: [
         {
             id: 1,
-            title: "Neon Horizon",
-            client: "CyberTech",
-            type: "Brand Identity",
-            image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2070",
-            metrics: "40% Brand Awareness Lift"
+            title: "Evertise Digital",
+            subtitle: "International Client Portfolio",
+            role: "Marketing Manager",
+            duration: "Apr 2021 - Oct 2024",
+            type: "Digital Agency",
+            image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=2000",
+            brief: "Led marketing operations for digital agency serving 8+ international clients across e-commerce, hospitality, and retail. Managed complete client lifecycle from acquisition to delivery.",
+            metrics: ["95% Client Retention", "8+ Int'l Clients", "Multi-Industry"],
+            skills: ["Business Development", "Team Leadership", "Meta Ads"]
         },
         {
             id: 2,
-            title: "Urban Pulse",
-            client: "Metro Lifestyle",
-            type: "Social Campaign",
-            image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=2074",
-            metrics: "2.5M Reach"
+            title: "Khubaib Foundation",
+            subtitle: "Syria & Turkey Earthquake Relief",
+            role: "Campaign Manager",
+            duration: "Feb - Mar 2023",
+            type: "Humanitarian Relief",
+            image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=2000",
+            brief: "Led complete humanitarian fundraising campaign for earthquake relief. Managed Islamabad chapter operations from strategy through execution under emergency timeline.",
+            metrics: ["500+ Attendees", "Target Achieved", "4-Week Response"],
+            skills: ["Crisis Response", "Event Management", "Nonprofit"]
         },
         {
             id: 3,
-            title: "EcoFuture",
-            client: "Green Earth",
-            type: "Video Direction",
-            image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2070",
-            metrics: "1M+ Views"
+            title: "Vorniqo Solutions",
+            subtitle: "Multi-Brand Real Estate Ecosystem",
+            role: "Marketing Manager",
+            duration: "Nov 2025 - Present",
+            type: "Real Estate Developer",
+            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
+            brief: "Built marketing team and operations from ground up for 5+ property brands. Directed 20+ video campaigns and executed performance marketing across entire portfolio.",
+            metrics: ["5 Brands Managed", "Team of 5 Built", "20+ Videos"],
+            skills: ["Multi-Brand Strategy", "Team Building", "Content Planning"]
         },
         {
             id: 4,
-            title: "Velvet Luxe",
-            client: "Fashion Co",
-            type: "OOH Campaign",
-            image: "https://images.unsplash.com/photo-1542206395-9feb1621434d?auto=format&fit=crop&q=80&w=2028",
-            metrics: "Top Award Winner"
+            title: "HSQ Towers",
+            subtitle: "Viral Launch Campaign",
+            role: "Lead Marketing Manager",
+            duration: "Nov 2025 - Feb 2026",
+            type: "Premium Residential",
+            image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000",
+            metrics: ["999K+ Views", "10K+ Engagement", "600+ Bookings"],
+            brief: "Integrated property launch combining viral video content and strategic ads. Achieved market-leading engagement and significant booking volume.",
+            skills: ["Viral Content", "Video Direction", "ROI Marketing"]
         }
     ],
     socialMedia: Array.from({ length: 10 }, (_, i) => ({
