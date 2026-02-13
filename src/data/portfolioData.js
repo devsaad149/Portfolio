@@ -244,7 +244,7 @@ export const portfolioData = {
             platform: "Instagram",
             duration: "Valentine's Season",
             image: "https://images.unsplash.com/photo-1563241527-30058e1c3e30?auto=format&fit=crop&q=80&w=1000",
-            proof: "https://placehold.co/600x400?text=Petal+Analytics+Proof",
+            proof: ["/images/analytics/petal-proof-1.jpg", "/images/analytics/petal-proof-2.jpg"],
             objective: "Drive sales during peak season and maintain consistent profile traffic/growth.",
             strategy: "Visual-first seasonal content with emotional storytelling and urgency-driven offers.",
             stats: {
