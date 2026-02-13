@@ -166,7 +166,7 @@ export const portfolioData = {
         },
         {
             id: 10,
-            title: "AI-Powered Real Estate Innovation",
+            title: "Vorniqo Company Overview",
             client: "Vorniqo Solutions",
             category: "Brand Stories",
             thumbnail: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000",
@@ -178,7 +178,7 @@ export const portfolioData = {
         },
         {
             id: 11,
-            title: "Vorniqo Company Overview",
+            title: "Vorniqo Solutions",
             client: "Vorniqo Solutions",
             category: "Brand Stories",
             thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000",
