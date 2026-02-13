@@ -79,16 +79,31 @@
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Logo styles handled inline for priority */
-.featured-card:hover .featured-image {
-    /* Only scale if not a logo (logo has inline transform: scale(1) that might be overridden if !important is used here, but let's use specificity or just let inline win) */
-    transform: scale(1.05);
+/* Logo styles - Absolute Centering for Perfect Fit */
+.featured-image.is-logo {
+    width: 65% !important;
+    height: 65% !important;
+    object-fit: contain !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    padding: 0 !important;
+    /* Reset padding */
+    background: transparent !important;
+    /* Background handled by container */
+    z-index: 1;
 }
 
-/* Ensure inline styles for logos take precedence over hover transform if needed */
-.featured-card:hover img[style*="object-fit: contain"] {
-    transform: scale(1.02);
-    /* More subtle zoom for logos if we want it, or scale(1) to disable */
+/* Ensure container has background for logos */
+.featured-image-container.has-logo-bg {
+    background-color: #050505;
+}
+
+/* Disable hover zoom for logos specifically */
+.featured-card:hover .featured-image.is-logo {
+    transform: translate(-50%, -50%) scale(1.05) !important;
+    /* Subtle scale from center */
 }
 
 .featured-overlay {

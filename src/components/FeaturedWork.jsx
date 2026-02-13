@@ -34,17 +34,11 @@ const FeaturedWork = () => {
                         >
                             <TiltCard className="featured-card-wrapper">
                                 <div className="featured-card">
-                                    <div className="featured-image-container">
+                                    <div className={`featured-image-container ${project.isLogo ? 'has-logo-bg' : ''}`}>
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="featured-image"
-                                            style={project.isLogo ? {
-                                                objectFit: 'contain',
-                                                padding: '4rem',
-                                                backgroundColor: '#050505',
-                                                transform: 'scale(1)' // Reset scale to avoid zoom issues
-                                            } : {}}
+                                            className={`featured-image ${project.isLogo ? 'is-logo' : ''}`}
                                         />
                                         <div className="featured-overlay">
                                             <div className="featured-badges">
