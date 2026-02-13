@@ -30,7 +30,7 @@ const FeaturedWork = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.6 }}
-                            className="featured-item"
+                            className={`featured-item ${index === 2 ? 'full-width' : ''}`}
                         >
                             <TiltCard className="featured-card-wrapper">
                                 <div className="featured-card">
@@ -42,7 +42,7 @@ const FeaturedWork = () => {
                                         />
                                         <div className="featured-overlay">
                                             <div className="featured-badges">
-                                                {project.metrics.slice(0, 3).map((metric, i) => (
+                                                {project.metrics.map((metric, i) => (
                                                     <span key={i} className="metric-badge">{metric}</span>
                                                 ))}
                                             </div>
@@ -60,11 +60,18 @@ const FeaturedWork = () => {
                                             <span className="featured-subtitle">{project.subtitle}</span>
                                         </div>
 
-                                        <p className="featured-brief">{project.brief}</p>
+                                        <div className="featured-body">
+                                            <p className="featured-brief">{project.brief}</p>
+                                            <div className="featured-tags">
+                                                {project.tags && project.tags.map((tag, i) => (
+                                                    <span key={i} className="skill-tag">#{tag}</span>
+                                                ))}
+                                            </div>
+                                        </div>
 
                                         <div className="featured-footer">
                                             <button className="view-case-study-btn">
-                                                View Full Case Study
+                                                View Details
                                                 <ArrowUpRight size={18} />
                                             </button>
                                         </div>

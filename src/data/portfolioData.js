@@ -11,50 +11,38 @@ export const portfolioData = {
         {
             id: 1,
             title: "Evertise Digital",
-            subtitle: "International Client Portfolio",
+            subtitle: "Global Agency Leadership",
             role: "Marketing Manager",
             duration: "Apr 2021 - Oct 2024",
             type: "Digital Agency",
-            image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=2000",
-            brief: "Led marketing operations for digital agency serving 8+ international clients across e-commerce, hospitality, and retail. Managed complete client lifecycle from acquisition to delivery.",
-            metrics: ["95% Client Retention", "8+ Int'l Clients", "Multi-Industry"],
-            skills: ["Business Development", "Team Leadership", "Meta Ads"]
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000",
+            brief: "Led marketing operations for digital agency serving 8+ international clients. Managed global portfolios, directed cross-functional teams, and drove business development while pursuing full-time education.",
+            metrics: ["95% Retention", "8+ Int'l Clients", "Multi-Industry"],
+            tags: ["Business Dev", "Team Leadership", "Global Strategy"]
         },
         {
             id: 2,
-            title: "Khubaib Foundation",
-            subtitle: "Syria & Turkey Earthquake Relief",
-            role: "Campaign Manager",
-            duration: "Feb - Mar 2023",
-            type: "Humanitarian Relief",
-            image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=2000",
-            brief: "Led complete humanitarian fundraising campaign for earthquake relief. Managed Islamabad chapter operations from strategy through execution under emergency timeline.",
-            metrics: ["500+ Attendees", "Target Achieved", "4-Week Response"],
-            skills: ["Crisis Response", "Event Management", "Nonprofit"]
-        },
-        {
-            id: 3,
             title: "Vorniqo Solutions",
-            subtitle: "Multi-Brand Real Estate Ecosystem",
+            subtitle: "Real Estate Ecosystem",
             role: "Marketing Manager",
             duration: "Nov 2025 - Present",
             type: "Real Estate Developer",
             image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-            brief: "Built marketing team and operations from ground up for 5+ property brands. Directed 20+ video campaigns and executed performance marketing across entire portfolio.",
-            metrics: ["5 Brands Managed", "Team of 5 Built", "20+ Videos"],
-            skills: ["Multi-Brand Strategy", "Team Building", "Content Planning"]
+            brief: "Established complete marketing infrastructure for 5+ property brands. Built team of 5, directed 20+ video campaigns, and executed performance marketing driving 600+ bookings in 3 months.",
+            metrics: ["999K+ Views", "600+ Bookings", "5 Brands"],
+            tags: ["Video Direction", "Rapid Scale-Up", "ROI Marketing"]
         },
         {
-            id: 4,
-            title: "HSQ Towers",
-            subtitle: "Viral Launch Campaign",
-            role: "Lead Marketing Manager",
-            duration: "Nov 2025 - Feb 2026",
-            type: "Premium Residential",
-            image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000",
-            metrics: ["999K+ Views", "10K+ Engagement", "600+ Bookings"],
-            brief: "Integrated property launch combining viral video content and strategic ads. Achieved market-leading engagement and significant booking volume.",
-            skills: ["Viral Content", "Video Direction", "ROI Marketing"]
+            id: 3,
+            title: "Small Business Growth",
+            subtitle: "Independent Brand Portfolio",
+            role: "Marketing Consultant",
+            duration: "Oct 2024 - Nov 2025",
+            type: "Multi-Industry",
+            image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000",
+            brief: "Developed comprehensive brand systems and growth campaigns for diverse small businesses (Cafe de Crave, Petal Perfection, MG Studios, Al Hikam). Delivered measurable ROI on limited budgets.",
+            metrics: ["4+ Brands Built", "30K+ Local Reach", "50+ Bookings"],
+            tags: ["Brand Identity", "Entrepreneurial Marketing", "Budget Optimization"]
         }
     ],
     socialMedia: Array.from({ length: 10 }, (_, i) => ({
