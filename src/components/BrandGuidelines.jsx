@@ -4,15 +4,6 @@ import { Download, Palette, Type } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import './BrandGuidelines.css';
 
-const getImagePath = (path) => {
-    // Check if running on GitHub Pages (production)
-    const isProduction = import.meta.env.PROD;
-    const base = isProduction ? '/Portfolio' : '';
-    // Ensure path starts with /
-    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-    return `${base}${normalizedPath}`;
-};
-
 const BrandCard = ({ brand, index }) => {
     return (
         <motion.div
@@ -23,7 +14,7 @@ const BrandCard = ({ brand, index }) => {
         >
             <div className="brand-card-inner">
                 <div className="brand-logo-container">
-                    <img src={getImagePath(brand.logo)} alt={`${brand.name} Logo`} className="brand-logo-main" />
+                    <img src={brand.logo} alt={`${brand.name} Logo`} className="brand-logo-main" />
                 </div>
 
                 <div className="brand-info-header">
