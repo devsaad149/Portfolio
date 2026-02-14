@@ -1,40 +1,31 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import ThreeScene from './components/ThreeScene';
-import Hero from './components/Hero';
-import FeaturedWork from './components/FeaturedWork';
-import VideoDirection from './components/VideoDirection';
-import OOH from './components/OOH';
-import BrandGuidelines from './components/BrandGuidelines';
-import CaseStudies from './components/CaseStudies';
-import Expertise from './components/Expertise';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import ScrollProgress from './components/ScrollProgress';
+import Home from './components/Home';
+import HSQTowers from './components/case-studies/HSQTowers';
+import ScrollToTop from './components/ScrollToTop';
 import CustomCursor from './components/CustomCursor';
+import ScrollProgress from './components/ScrollProgress';
 import './App.css';
 
 function App() {
   return (
-    <ReactLenis root>
-      <div className="App">
-        <CustomCursor />
-        <ScrollProgress />
-        <ThreeScene />
+    <Router basename="/Portfolio">
+      <ReactLenis root>
+        <div className="App">
+          <CustomCursor />
+          <ScrollProgress />
+          <ScrollToTop />
+          <ThreeScene />
 
-        <main>
-          <Hero />
-          <FeaturedWork />
-          <VideoDirection />
-          <OOH />
-          <BrandGuidelines />
-          <CaseStudies />
-          <Expertise />
-          <Experience />
-          <Contact />
-        </main>
-      </div>
-    </ReactLenis>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/case-studies/hsq-towers" element={<HSQTowers />} />
+          </Routes>
+        </div>
+      </ReactLenis>
+    </Router>
   );
 }
 

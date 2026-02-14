@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import TiltCard from './3D/TiltCard';
 import { portfolioData } from '../data/portfolioData';
 import './FeaturedWork.css';
@@ -70,10 +71,17 @@ const FeaturedWork = () => {
                                         </div>
 
                                         <div className="featured-footer">
-                                            <button className="view-case-study-btn">
-                                                View Details
-                                                <ArrowUpRight size={18} />
-                                            </button>
+                                            {project.id === 2 ? (
+                                                <Link to="/case-studies/hsq-towers" className="view-case-study-btn">
+                                                    View Case Study
+                                                    <ArrowUpRight size={18} />
+                                                </Link>
+                                            ) : (
+                                                <button className="view-case-study-btn">
+                                                    View Details
+                                                    <ArrowUpRight size={18} />
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
