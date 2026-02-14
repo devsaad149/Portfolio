@@ -4,38 +4,32 @@ import { portfolioData } from '../data/portfolioData';
 import './Expertise.css';
 
 const Expertise = () => {
-    const { expertise } = portfolioData;
+    const { coreCompetencies } = portfolioData;
 
     return (
         <section className="expertise-section section-padding">
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title text-gradient">Core Competencies</h2>
-                    <p className="section-subtitle">A blend of creative vision and technical precision.</p>
+                    <p className="section-subtitle">Marketing expertise across strategy, execution, and team leadership</p>
                 </div>
 
-                <div className="expertise-grid grid grid-cols-2 md:grid-cols-4">
-                    {expertise.map((skill, index) => (
+                <div className="expertise-grid">
+                    {coreCompetencies.map((skill, index) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.05, duration: 0.5 }}
-                            whileHover={{ y: -10 }}
-                            className="skill-card glass-panel"
+                            key={skill.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1, duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="competency-card group"
                         >
-                            <div className="skill-icon-wrapper">
-                                <skill.icon size={32} className="skill-icon" />
+                            <div className="icon-wrapper">
+                                <skill.icon size={36} strokeWidth={1.5} />
                             </div>
-                            <h3 className="skill-name">{skill.name}</h3>
-                            <div className="skill-bar-bg">
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: `${skill.level}%` }}
-                                    transition={{ duration: 1, delay: 0.5 }}
-                                    className="skill-bar-fill"
-                                />
-                            </div>
+                            <h3 className="skill-title">{skill.name}</h3>
+                            <p className="skill-description">{skill.description}</p>
+                            <div className="card-accent"></div>
                         </motion.div>
                     ))}
                 </div>

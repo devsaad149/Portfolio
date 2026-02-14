@@ -1,4 +1,4 @@
-import { Palette, Globe, Video, Layout, TrendingUp, Users, Layers, Zap, Award, Briefcase, Mail } from 'lucide-react';
+import { Palette, Globe, Video, Layout, TrendingUp, Users, Layers, Zap, Award, Briefcase, Mail, Target, Film, BarChart3, Smartphone } from 'lucide-react';
 
 const getAssetPath = (path) => {
     if (!path || typeof path !== 'string') return path;
@@ -405,15 +405,55 @@ const rawPortfolioData = {
             results: "Sold out 80% of units in pre-launch."
         }
     ],
-    expertise: [
-        { icon: Palette, name: "Art Direction", level: 95 },
-        { icon: Layout, name: "Brand Strategy", level: 90 },
-        { icon: Video, name: "Video Direction", level: 85 },
-        { icon: Layers, name: "UI/UX Design", level: 88 },
-        { icon: Globe, name: "Digital Campaign", level: 92 },
-        { icon: Users, name: "Team Leadership", level: 85 },
-        { icon: TrendingUp, name: "Growth Marketing", level: 80 },
-        { icon: Zap, name: "Motion Graphics", level: 75 }
+    coreCompetencies: [
+        {
+            id: 1,
+            icon: Target,
+            name: "Campaign Strategy",
+            description: "End-to-end campaign planning from concept to execution, with focus on audience targeting and multi-channel integration"
+        },
+        {
+            id: 2,
+            icon: Film,
+            name: "Video Direction",
+            description: "Scripting and directing video campaigns - conceptualize vision, direct editorial teams, ensure quality standards and brand alignment"
+        },
+        {
+            id: 3,
+            icon: BarChart3,
+            name: "Meta Advertising",
+            description: "Paid social expertise managing six-figure budgets, audience segmentation, campaign optimization, and ROI-focused performance marketing"
+        },
+        {
+            id: 4,
+            icon: Smartphone,
+            name: "Social Media",
+            description: "Content strategy, platform management, organic growth tactics, and community engagement across Instagram and Facebook"
+        },
+        {
+            id: 5,
+            icon: Palette,
+            name: "Brand Development",
+            description: "Complete brand identity systems including logos, color palettes, typography, guidelines, and brand voice across industries"
+        },
+        {
+            id: 6,
+            icon: Users,
+            name: "Team Leadership",
+            description: "Building and managing cross-functional teams (designers, editors, marketers), delegating workflows, and mentoring team members"
+        },
+        {
+            id: 7,
+            icon: TrendingUp,
+            name: "Performance Analytics",
+            description: "Data-driven optimization, tracking KPIs, A/B testing, conversion analysis, and continuous campaign improvement"
+        },
+        {
+            id: 8,
+            icon: Layers,
+            name: "Multi-Brand Management",
+            description: "Strategic oversight of multiple brands simultaneously while maintaining individual identities and coordinated marketing efforts"
+        }
     ],
     experience: [
         {
