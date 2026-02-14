@@ -33,6 +33,15 @@ const HSQTowers = () => {
                 </div>
 
                 <div className="case-study-hero-content">
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeInUp}
+                        className="mb-8 flex justify-center"
+                    >
+                        <img src="/images/social/hsq-logo.jpg" alt="HSQ Towers Logo" className="w-24 h-24 rounded-full border-4 border-yellow-500/30 shadow-2xl" />
+                    </motion.div>
+
                     <motion.span
                         initial="hidden"
                         animate="visible"
@@ -162,7 +171,8 @@ const HSQTowers = () => {
                     <div className="section-grid">
                         <div className="order-2 md:order-1 relative">
                             <div className="absolute -inset-4 bg-yellow-500/20 blur-3xl opacity-30 rounded-full"></div>
-                            <img src="/images/restored/media__1771024089560.png" alt="Analytics Dashboard" className="relative z-10 rounded-xl shadow-2xl border border-white/10" />
+                            {/* UPDATED: Consistently use the HSQ proof image for analytics dashboard */}
+                            <img src="/images/analytics/hsq-proof.jpg" alt="Analytics Dashboard" className="relative z-10 rounded-xl shadow-2xl border border-white/10" />
                         </div>
                         <div className="section-content order-1 md:order-2">
                             <motion.h2 variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -255,12 +265,21 @@ const HSQTowers = () => {
                     <div className="gallery-grid">
                         <div className="gallery-item group">
                             <video src="/videos/hsq-cta.mp4" controls className="w-full h-full object-cover" poster="/images/restored/hsq_billboard_mockup_1771007886208.png"></video>
+                            <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                                <p className="text-white font-bold text-sm">Action-Driven CTA Reel</p>
+                            </div>
                         </div>
                         <div className="gallery-item group">
                             <video src="/videos/hsq-reach.mp4" controls className="w-full h-full object-cover" poster="/images/restored/hsq_highway_billboard_1771008038206.png"></video>
+                            <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                                <p className="text-white font-bold text-sm">Broad Reach Campaign</p>
+                            </div>
                         </div>
                         <div className="gallery-item group">
                             <video src="/videos/lifestyle-showcase.mp4" controls className="w-full h-full object-cover"></video>
+                            <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                                <p className="text-white font-bold text-sm">Lifestyle & Amenities Showcase</p>
+                            </div>
                         </div>
                     </div>
                 </section>
