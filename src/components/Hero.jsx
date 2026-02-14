@@ -16,7 +16,7 @@ const getAssetPath = (path) => {
 const Hero = () => {
     const { name, title, subtitle, cta } = portfolioData.hero;
 
-    const bgImage = getAssetPath("/images/saad_image.png");
+    const bgImage = getAssetPath("/images/saad_image.jpg");
 
     return (
         <section className="hero-section" style={{ backgroundImage: `url(${bgImage})` }}>
