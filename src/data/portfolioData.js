@@ -576,9 +576,11 @@ const rawPortfolioData = {
         }
     ],
     socialLinks: {
-        linkedin: "#",
-        instagram: "#",
-        email: "mailto:hello@saadsohail.com"
+        linkedin: "https://www.linkedin.com/in/saad-sohail-2b40a5250",
+        instagram: "https://www.instagram.com/",
+        email: "mailto:sasaad149@gmail.com",
+        whatsapp: "https://wa.me/923180820643",
+        portfolioPdf: "/Saad_Sohail_CV.pdf"
     }
 };
 
