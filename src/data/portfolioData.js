@@ -293,14 +293,14 @@ const rawPortfolioData = {
             id: 3,
             title: "Khubaib Foundation Event Campaign",
             location: "Charity Gala",
-            image: "/images/ooh/khubaib-standee.png",
+            image: "/images/ooh/khubaib-event-new.png",
             specs: "Syria earthquake relief social media campaign supporting live fundraising event. Design translated to physical standee at venue."
         },
         {
             id: 4,
             title: "Khubaib Foundation Advocacy Campaign",
             location: "Multiple Venues",
-            image: "/images/ooh/khubaib-banner.png",
+            image: "/images/ooh/khubaib-advocacy-new.png",
             specs: "Ongoing social campaign for orphan support programs with emotional storytelling and clear CTAs."
         },
         {
