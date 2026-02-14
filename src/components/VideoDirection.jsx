@@ -65,6 +65,7 @@ const VideoDirection = () => {
                                             loop
                                             playsInline
                                             preload="metadata"
+                                            poster={item.thumbnail}
                                         />
                                     ) : (
                                         <img src={item.thumbnail} alt={item.title} className="video-thumbnail" />

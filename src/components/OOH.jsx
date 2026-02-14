@@ -4,6 +4,13 @@ import { MapPin, Maximize } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import './OOH.css';
 
+const getImagePath = (path) => {
+    const isProduction = import.meta.env.PROD;
+    const base = isProduction ? '/Portfolio' : '';
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    return `${base}${normalizedPath}`;
+};
+
 const OOHItem = ({ item, index }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -19,7 +26,7 @@ const OOHItem = ({ item, index }) => {
     return (
         <div ref={ref} className={`ooh-item ${isEven ? 'even' : 'odd'}`}>
             <motion.div style={{ y, opacity }} className="ooh-image-container">
-                <img src={item.image} alt={item.title} className="ooh-image" />
+                <img src={getImagePath(item.image)} alt={item.title} className="ooh-image" />
             </motion.div>
 
             <motion.div

@@ -1,6 +1,14 @@
 import { Palette, Globe, Video, Layout, TrendingUp, Users, Layers, Zap, Award, Briefcase, Mail } from 'lucide-react';
 
-export const portfolioData = {
+const getAssetPath = (path) => {
+    if (!path || typeof path !== 'string') return path;
+    if (!path.startsWith('/')) return path; // Ignore external links (http) or relative
+    const isProduction = import.meta.env.PROD;
+    const base = isProduction ? '/Portfolio' : '';
+    return `${base}${path}`;
+};
+
+const rawPortfolioData = {
     hero: {
         name: "Saad Sohail",
         title: "Art Director & Brand Strategist",
@@ -28,7 +36,7 @@ export const portfolioData = {
             role: "Marketing Manager",
             duration: "Nov 2025 - Present",
             type: "Real Estate Developer",
-            image: "/images/projects/vorniqo-logo.jpg",
+            image: "/images/brand/vorniqo-logo.jpg",
             brief: "Established complete marketing infrastructure for 5+ property brands. Built team of 5, directed 20+ video campaigns, and executed performance marketing driving 600+ bookings in 3 months.",
             metrics: ["999K+ Views", "600+ Bookings", "5 Brands"],
             tags: ["Video Direction", "Rapid Scale-Up", "ROI Marketing"],
@@ -41,8 +49,8 @@ export const portfolioData = {
             role: "Marketing Consultant",
             duration: "Oct 2024 - Nov 2025",
             type: "Multi-Industry",
-            image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000",
-            brief: "Developed comprehensive brand systems and growth campaigns for diverse small businesses (Cafe de Crave, Petal Perfection, MG Studios, Al Hikam). Delivered measurable ROI on limited budgets.",
+            image: "/images/social/cafe-logo.jpg",
+            brief: "Developed comprehensive brand systems and growth campaigns for diverse small businesses (Cafe De Crave, Petal Perfection, MG Studios, AL Hikmah). Delivered measurable ROI on limited budgets.",
             metrics: ["4+ Brands Built", "30K+ Local Reach", "50+ Bookings"],
             tags: ["Brand Identity", "Entrepreneurial Marketing", "Budget Optimization"]
         }
@@ -67,7 +75,7 @@ export const portfolioData = {
             title: "Address Fountain - Luxury Living",
             client: "Al Zafar Builders",
             category: "Property Showcases",
-            thumbnail: "https://images.unsplash.com/photo-1600596542815-2a429fe536e9?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771024089560.png",
             duration: "1:30",
             brief: "Showcase Address Fountain luxury apartments to high-end buyers, highlighting premium amenities and location advantages.",
             approach: "Cinematic property walkthrough focusing on lifestyle aspirations, combined with testimonial-style messaging to build trust and desire.",
@@ -79,7 +87,7 @@ export const portfolioData = {
             title: "Address Fountain - Investment",
             client: "Nouman Builder",
             category: "Property Showcases",
-            thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771023468908.png",
             duration: "1:45",
             brief: "Position Address Fountain as prime investment opportunity, emphasizing ROI potential and payment flexibility.",
             approach: "Investment-focused narrative highlighting location appreciation, payment plans, and future value proposition.",
@@ -91,7 +99,7 @@ export const portfolioData = {
             title: "Al Zafar Brand Story",
             client: "Al Zafar Builders",
             category: "Brand Stories",
-            thumbnail: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771022329683.png",
             duration: "2:10",
             brief: "Establish Al Zafar Builders as trusted real estate developer with proven track record.",
             approach: "Brand credibility video showcasing completed projects, construction quality, and customer satisfaction.",
@@ -103,7 +111,7 @@ export const portfolioData = {
             title: "Destination Discovery",
             client: "Hidden Hideouts",
             category: "Social Reels",
-            thumbnail: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771021821464.png",
             duration: "0:45",
             brief: "Showcase unique travel destination to inspire bookings and build brand awareness.",
             approach: "Immersive visual storytelling highlighting location beauty, experiences, and peaceful escape from city life.",
@@ -115,7 +123,7 @@ export const portfolioData = {
             title: "Experience the Journey",
             client: "Hidden Hideouts",
             category: "Social Reels",
-            thumbnail: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771020842385.png",
             duration: "0:50",
             brief: "Create emotional connection with travelers seeking unique experiences.",
             approach: "Cinematic travel content emphasizing adventure, relaxation, and memorable moments.",
@@ -127,7 +135,7 @@ export const portfolioData = {
             title: "HSQ Towers Call to Action",
             client: "HSQ Towers",
             category: "Commercial Ads",
-            thumbnail: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771020657078.png",
             duration: "0:30",
             brief: "Drive immediate action for property bookings with limited-time offer.",
             approach: "High-energy reel with strong CTA, urgency messaging, and clear booking instructions.",
@@ -139,7 +147,7 @@ export const portfolioData = {
             title: "HSQ Towers Reach Campaign",
             client: "HSQ Towers",
             category: "Commercial Ads",
-            thumbnail: "https://images.unsplash.com/photo-1431576979088-e820c74fb78a?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771017323935.png",
             duration: "1:00",
             brief: "Maximize reach and brand visibility in target market.",
             approach: "Broad-appeal content highlighting lifestyle benefits, modern design, and convenient location.",
@@ -151,7 +159,7 @@ export const portfolioData = {
             title: "Lifestyle Showcase",
             client: "HSQ Towers",
             category: "Social Reels",
-            thumbnail: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771013650715.png",
             duration: "0:55",
             brief: "Convert awareness into qualified leads through aspirational lifestyle content.",
             approach: "Premium lifestyle positioning with focus on modern amenities, community features, and investment value.",
@@ -163,7 +171,7 @@ export const portfolioData = {
             title: "Wedding Videography Portfolio",
             client: "MG Studios",
             category: "Brand Stories",
-            thumbnail: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771013429444.png",
             duration: "2:30",
             brief: "Showcase videography quality to attract wedding bookings.",
             approach: "Emotional storytelling highlighting cinematic wedding moments and production quality.",
@@ -175,7 +183,7 @@ export const portfolioData = {
             title: "Vorniqo Company Overview",
             client: "Vorniqo Solutions",
             category: "Brand Stories",
-            thumbnail: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771010076411.png",
             duration: "1:15",
             brief: "Position Vorniqo as innovative, tech-forward real estate solutions provider.",
             approach: "Showcased AI-generated property visualizations and modern marketing approach to differentiate from traditional developers.",
@@ -187,7 +195,7 @@ export const portfolioData = {
             title: "Vorniqo Solutions",
             client: "Vorniqo Solutions",
             category: "Brand Stories",
-            thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000",
+            thumbnail: "/images/restored/media__1771009763293.png",
             duration: "3:00",
             brief: "Communicate Vorniqo's multi-brand portfolio and comprehensive real estate solutions.",
             approach: "Corporate storytelling showcasing breadth of services, completed projects, and client success stories.",
@@ -218,8 +226,8 @@ export const portfolioData = {
         },
         {
             id: 2,
-            title: "Al Hikam Academy",
-            client: "Al Hikam Academy",
+            title: "AL Hikmah Academy",
+            client: "AL Hikmah Academy",
             category: "Education",
             platform: "Meta Ads",
             duration: "2024-2025",
@@ -258,8 +266,8 @@ export const portfolioData = {
         },
         {
             id: 4,
-            title: "Cave de Crave",
-            client: "Cave de Crave",
+            title: "Cafe De Crave",
+            client: "Cafe De Crave",
             category: "F&B",
             platform: "Meta Ads",
             duration: "Grand Opening",
@@ -282,14 +290,14 @@ export const portfolioData = {
             id: 1,
             title: "Cafe de Crave Promotional Campaign",
             location: "Capital Plaza, G-11 Markaz",
-            image: "/images/ooh/cafe-signage.jpg",
+            image: "/images/ooh/cafe-signage.png",
             specs: "Grand opening social media campaign with bold visual impact suitable for both digital feeds and potential physical signage."
         },
         {
             id: 2,
             title: "HSQ Towers Social Campaign - Lifestyle Series",
             location: "Islamabad Expressway",
-            image: "/images/ooh/hsq-billboard.jpg",
+            image: "/images/ooh/hsq-billboard.png",
             specs: "Instagram/Facebook campaign showcasing premium lifestyle positioning. Design demonstrates scalability from digital to physical applications."
         },
         {
@@ -310,45 +318,76 @@ export const portfolioData = {
             id: 5,
             title: "Vorniqo Solutions Brand Positioning",
             location: "Blue Area, Islamabad",
-            image: "/images/ooh/vorniqo-banner.jpg",
+            image: "/images/ooh/vorniqo-banner.png",
             specs: "B2B thought leadership content establishing software expertise through bold visual statements."
         }
     ],
     brandGuidelines: [
         {
             id: 1,
-            name: "Apex Financial",
-            colors: ["#003366", "#FFD700", "#F0F0F0"],
-            logo: "AF",
-            typography: "Helvetica Now"
+            name: "HSQ Towers",
+            industry: "Premium Real Estate",
+            industry_loc: "Industry: Premium Real Estate | Location: Jhika Gali, Murree",
+            positioning: "Luxury mountain living with regal sophistication",
+            logo: "/images/social/hsq-logo.jpg",
+            colors: [
+                { hex: "#D4AF37", name: "Royal Gold" },
+                { hex: "#1A1A1A", name: "Deep Black" }
+            ],
+            typography: {
+                headline: "Trajan Pro",
+                body: "Helvetica",
+                sample: "Luxury Living Defined"
+            },
+            attributes: ["Aspirational", "Sophisticated", "Warm", "Confident"],
+            applications: ["Social Media", "Property Marketing", "Digital Ads", "Signage", "Sales Collateral", "Website"],
+            achievement: "Viral campaign: 999K views & 700+ bookings",
+            pdf: "/pdfs/HSQ_Towers_Brand_Guidelines.pdf"
         },
         {
             id: 2,
-            name: "Bloom Organics",
-            colors: ["#4CAF50", "#8BC34A", "#FFF9C4"],
-            logo: "BO",
-            typography: "Brandon Grotesque"
+            name: "Vorniqo Solutions",
+            industry: "Technology & Real Estate",
+            industry_loc: "Industry: Technology & Real Estate Solutions",
+            positioning: "Innovation-driven real estate management",
+            logo: "/images/brand/vorniqo-logo.jpg",
+            colors: [
+                { hex: "#1A4D2E", name: "Forest Green" },
+                { hex: "#00CED1", name: "Tech Turquoise" },
+                { hex: "#FFFFFF", name: "Pure White" }
+            ],
+            typography: {
+                headline: "Montserrat",
+                body: "Open Sans",
+                sample: "Innovation in Connectivity"
+            },
+            attributes: ["Innovative", "Professional", "Clear", "Confident"],
+            applications: ["Corporate Comms", "Multi-brand Portfolio", "Presentations", "Digital Platforms", "Marketing Collateral"],
+            achievement: "Unified parent identity for 5+ property sub-brands",
+            pdf: "/pdfs/Vorniqo_Solutions_Brand_Guidelines.pdf"
         },
         {
             id: 3,
-            name: "Nexus Tech",
-            colors: ["#6200EA", "#00B0FF", "#111111"],
-            logo: "NX",
-            typography: "Inter"
-        },
-        {
-            id: 4,
-            name: "Solstice Energy",
-            colors: ["#FF5722", "#FFC107", "#212121"],
-            logo: "SE",
-            typography: "Roboto Mono"
-        },
-        {
-            id: 5,
-            name: "Velvet Cafe",
-            colors: ["#795548", "#D7CCC8", "#3E2723"],
-            logo: "VC",
-            typography: "Playfair Display"
+            name: "Fiorire",
+            industry: "Lifestyle Retail",
+            industry_loc: "Industry: Lifestyle Retail | Location: Islamabad",
+            positioning: "Italian elegance meets botanical artistry",
+            logo: "/images/brand/fiorire-logo.jpg",
+            colors: [
+                { hex: "#1A1A1A", name: "Classic Black" },
+                { hex: "#F5F5F0", name: "Cream White" },
+                { hex: "#F8C8DC", name: "Soft Blush" },
+                { hex: "#9CAF88", name: "Sage Green" }
+            ],
+            typography: {
+                headline: "Playfair Display",
+                body: "Lato",
+                sample: "Botanical Artistry"
+            },
+            attributes: ["Elegant", "Warm", "Artisanal", "Romantic"],
+            applications: ["Packaging", "Social Media", "Stationery", "Website", "Event Materials", "Product Tags"],
+            achievement: "Balancing luxury sophistication with approachable warmth",
+            pdf: "/pdfs/Fiorire_Brand_Guidelines.pdf"
         }
     ],
     caseStudies: [
@@ -428,3 +467,46 @@ export const portfolioData = {
         email: "mailto:hello@saadsohail.com"
     }
 };
+
+export const portfolioData = (() => {
+    const d = { ...rawPortfolioData };
+
+    // Transform Featured Work
+    if (d.featuredWork) {
+        d.featuredWork = d.featuredWork.map(i => ({ ...i, image: getAssetPath(i.image) }));
+    }
+
+    // Transform Video Direction
+    if (d.videoDirection) {
+        d.videoDirection = d.videoDirection.map(i => ({
+            ...i,
+            thumbnail: getAssetPath(i.thumbnail),
+            videoUrl: getAssetPath(i.videoUrl)
+        }));
+    }
+
+    // Transform Social Campaigns
+    if (d.socialCampaigns) {
+        d.socialCampaigns = d.socialCampaigns.map(i => ({
+            ...i,
+            image: getAssetPath(i.image),
+            proof: Array.isArray(i.proof) ? i.proof.map(getAssetPath) : getAssetPath(i.proof)
+        }));
+    }
+
+    // Transform OOH
+    if (d.ooh) {
+        d.ooh = d.ooh.map(i => ({ ...i, image: getAssetPath(i.image) }));
+    }
+
+    // Transform Brand Guidelines
+    if (d.brandGuidelines) {
+        d.brandGuidelines = d.brandGuidelines.map(i => ({
+            ...i,
+            logo: getAssetPath(i.logo),
+            pdf: getAssetPath(i.pdf)
+        }));
+    }
+
+    return d;
+})();

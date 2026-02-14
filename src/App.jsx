@@ -3,8 +3,6 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 import ThreeScene from './components/ThreeScene';
 import Hero from './components/Hero';
 import FeaturedWork from './components/FeaturedWork';
-import SocialCampaigns from './components/SocialCampaigns';
-import SocialMedia from './components/SocialMedia';
 import VideoDirection from './components/VideoDirection';
 import OOH from './components/OOH';
 import BrandGuidelines from './components/BrandGuidelines';
@@ -27,8 +25,6 @@ function App() {
         <main>
           <Hero />
           <FeaturedWork />
-          <SocialCampaigns />
-          <SocialMedia />
           <VideoDirection />
           <OOH />
           <BrandGuidelines />
