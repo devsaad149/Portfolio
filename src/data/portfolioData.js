@@ -1,4 +1,4 @@
-import { Palette, Globe, Video, Layout, TrendingUp, Users, Layers, Zap, Award, Briefcase, Mail, Target, Film, BarChart3, Smartphone } from 'lucide-react';
+import { Palette, Globe, Video, Layout, TrendingUp, Users, Layers, Zap, Award, Briefcase, Mail, Target, Film, BarChart3, Smartphone, PieChart, CheckSquare } from 'lucide-react';
 
 const getAssetPath = (path) => {
     if (!path || typeof path !== 'string') return path;
@@ -379,30 +379,68 @@ const rawPortfolioData = {
             pdf: "/pdfs/Fiorire_Brand_Guidelines.pdf"
         }
     ],
-    caseStudies: [
+    toolsAndTech: [
         {
             id: 1,
-            title: "Rebranding a National Icon",
-            client: "Legacy Corp",
-            challenge: "Modernize a 50-year-old brand without alienating loyal customers.",
-            strategy: "Evolutionary design approach retaining core equities while refreshing the visual system.",
-            results: "15% increase in youth segment engagement."
+            category: "Paid Advertising",
+            icon: Target,
+            tools: [
+                { name: "Meta Ads Manager", desc: "Facebook & Instagram campaigns" },
+                { name: "Facebook Business Suite", desc: "Management & insights" },
+                { name: "Google Ads Manager", desc: "Search & display ads" },
+                { name: "TikTok Ads Manager", desc: "Video campaigns" }
+            ]
         },
         {
             id: 2,
-            title: "Launch Campaign for SaaS",
-            client: "CloudFlow",
-            challenge: "Cut through noise in a crowded market with limited budget.",
-            strategy: "Hyper-targeted digital campaign focused on pain points.",
-            results: "300% ROI in first quarter."
+            category: "Analytics & Performance",
+            icon: PieChart,
+            tools: [
+                { name: "Google Analytics", desc: "Traffic & behavior analysis" },
+                { name: "Meta Analytics", desc: "Audience insights" },
+                { name: "Semrush", desc: "SEO & competitive research" }
+            ]
         },
         {
             id: 3,
-            title: "Luxury Real Estate Experience",
-            client: "The Heights",
-            challenge: "Sell off-plan luxury apartments at premium price points.",
-            strategy: "Immersive VR experience and high-touch event marketing.",
-            results: "Sold out 80% of units in pre-launch."
+            category: "Design & Creative",
+            icon: Palette,
+            tools: [
+                { name: "Canva Pro", desc: "Speed design & content" },
+                { name: "Nano Banana", desc: "AI image generation" },
+                { name: "AI Design Tools", desc: "Asset creation" }
+            ]
+        },
+        {
+            id: 4,
+            category: "Collaboration",
+            icon: CheckSquare,
+            tools: [
+                { name: "Slack", desc: "Team coordination" },
+                { name: "Workflow Management", desc: "Task delegation" },
+                { name: "Cross-functional Collab", desc: "Stakeholder mgmt" }
+            ]
+        },
+        {
+            id: 5,
+            category: "Social Platforms",
+            icon: Smartphone,
+            tools: [
+                { name: "Instagram", desc: "Visual storytelling" },
+                { name: "Facebook", desc: "Community engagement" },
+                { name: "WhatsApp Business", desc: "Direct conversion" },
+                { name: "LinkedIn", desc: "B2B networking" }
+            ]
+        },
+        {
+            id: 6,
+            category: "Marketing Automation",
+            icon: Zap,
+            tools: [
+                { name: "Email Platforms", desc: "Automated sequences" },
+                { name: "CRM Systems", desc: "Lead management" },
+                { name: "AI-Powered Tools", desc: "Content & optimization" }
+            ]
         }
     ],
     coreCompetencies: [

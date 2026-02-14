@@ -4,7 +4,7 @@ import FeaturedWork from './FeaturedWork';
 import VideoDirection from './VideoDirection';
 import OOH from './OOH';
 import BrandGuidelines from './BrandGuidelines';
-import CaseStudies from './CaseStudies';
+import ToolsTech from './ToolsTech';
 import Expertise from './Expertise';
 import Experience from './Experience';
 import Contact from './Contact';
@@ -17,7 +17,7 @@ const Home = () => {
             <VideoDirection />
             <OOH />
             <BrandGuidelines />
-            <CaseStudies />
+            <ToolsTech />
             <Expertise />
             <Experience />
             <Contact />
