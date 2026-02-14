@@ -5,12 +5,18 @@ import '../styles/global.css';
 import './Hero.css';
 import { portfolioData } from '../data/portfolioData';
 
+const getAssetPath = (path) => {
+    if (!path) return path;
+    const isProduction = import.meta.env.PROD;
+    const base = isProduction ? '/Portfolio' : '';
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    return `${base}${normalizedPath}`;
+};
+
 const Hero = () => {
     const { name, title, subtitle, cta } = portfolioData.hero;
 
-    // PLACEHOLDER IMAGE - Replace this URL with your local image path like "/images/saad_image.png"
-    // when you have the file in your public folder.
-    const bgImage = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2400&auto=format&fit=crop";
+    const bgImage = getAssetPath("/images/saad_image.png");
 
     return (
         <section className="hero-section" style={{ backgroundImage: `url(${bgImage})` }}>
