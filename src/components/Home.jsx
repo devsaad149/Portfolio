@@ -3,6 +3,7 @@ import Hero from './Hero';
 import FeaturedWork from './FeaturedWork';
 import VideoDirection from './VideoDirection';
 import OOH from './OOH';
+import SocialCampaigns from './SocialCampaigns';
 import BrandGuidelines from './BrandGuidelines';
 import ToolsTech from './ToolsTech';
 import Expertise from './Expertise';
@@ -16,6 +17,7 @@ const Home = () => {
             <FeaturedWork />
             <VideoDirection />
             <OOH />
+            <SocialCampaigns />
             <BrandGuidelines />
             <ToolsTech />
             <Expertise />
