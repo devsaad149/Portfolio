@@ -8,75 +8,59 @@ import { portfolioData } from '../data/portfolioData';
 const Hero = () => {
     const { name, title, subtitle, cta } = portfolioData.hero;
 
-    const letterAnim = {
-        hidden: { y: 100, opacity: 0 },
-        visible: (i) => ({
-            y: 0,
-            opacity: 1,
-            transition: {
-                delay: i * 0.05,
-                duration: 0.8,
-                ease: [0.2, 0.65, 0.3, 0.9],
-            },
-        }),
-    };
-
-    const nameChars = name.split("");
+    // PLACEHOLDER IMAGE - Replace this URL with your local image path like "/images/saad_image.png"
+    // when you have the file in your public folder.
+    const bgImage = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2400&auto=format&fit=crop";
 
     return (
-        <section className="hero-section">
+        <section className="hero-section" style={{ backgroundImage: `url(${bgImage})` }}>
+            <div className="hero-overlay"></div>
+
             <div className="container hero-container">
                 <div className="hero-content">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="hero-intro"
                     >
-                        <span className="hero-greeting">Hello, I'm</span>
+                        <span className="hero-greeting">HELLO, I'M</span>
                     </motion.div>
 
-                    <h1 className="hero-name">
-                        {nameChars.map((char, index) => (
-                            <motion.span
-                                key={index}
-                                custom={index}
-                                variants={letterAnim}
-                                initial="hidden"
-                                animate="visible"
-                                className="hero-char"
-                            >
-                                {char === " " ? "\u00A0" : char}
-                            </motion.span>
-                        ))}
-                    </h1>
+                    <motion.h1
+                        className="hero-name"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                    >
+                        {name}
+                    </motion.h1>
 
                     <motion.h2
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
-                        className="hero-title text-gradient"
+                        className="hero-role text-gradient"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.8 }}
                     >
                         {title}
                     </motion.h2>
 
                     <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8, duration: 0.8 }}
                         className="hero-subtitle"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6, duration: 0.8 }}
                     >
                         {subtitle}
                     </motion.p>
 
                     <motion.div
+                        className="hero-cta-wrapper"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 0.8 }}
-                        className="hero-cta-wrapper"
+                        transition={{ delay: 0.8, duration: 0.8 }}
                     >
-                        <a href="#work" className="btn-primary hover-lift">
-                            {cta}
+                        <a href="#featured-work" className="btn-primary-hero">
+                            {cta} <span className="arrow-icon">→</span>
                         </a>
                     </motion.div>
                 </div>
@@ -84,11 +68,11 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
+                    transition={{ delay: 1.2, duration: 1 }}
                     className="scroll-indicator"
                 >
-                    <span>Scroll to Explore</span>
-                    <ArrowDown className="animate-bounce" size={20} />
+                    <span className="scroll-text">SCROLL TO EXPLORE</span>
+                    <ArrowDown className="animate-bounce" size={24} />
                 </motion.div>
             </div>
         </section>

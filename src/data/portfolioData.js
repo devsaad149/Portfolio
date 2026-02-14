@@ -11,8 +11,8 @@ const getAssetPath = (path) => {
 const rawPortfolioData = {
     hero: {
         name: "Saad Sohail",
-        title: "Art Director & Brand Strategist",
-        subtitle: "Building brands from concept to campaign across digital, outdoor, and video",
+        title: "Marketing Manager & Brand Strategist",
+        subtitle: "4+ years building brands. 3.78M impressions. 700 bookings. Marketing that delivers.",
         cta: "Explore My Work"
     },
     featuredWork: [
