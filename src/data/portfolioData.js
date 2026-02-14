@@ -418,36 +418,83 @@ const rawPortfolioData = {
     experience: [
         {
             id: 1,
-            role: "Senior Art Director",
-            company: "Creative Agency X",
-            period: "2023 - Present",
-            achievements: [
-                "Lead a team of 10 designers and editors.",
-                "Spearheaded campaigns for Fortune 500 clients.",
-                "Increased department efficiency by 20%."
-            ]
+            role: "Marketing Manager",
+            subtitle: "",
+            company: "Vorniqo Solutions",
+            location: "Islamabad, Pakistan",
+            duration: "November 2024 - Present",
+            durationDisplay: "3+ months",
+            status: "Current Role",
+            overview: "Hired to establish complete marketing operations for real estate solutions company managing multi-brand portfolio. Built team from ground up and executed high-performance campaigns achieving exceptional business results.",
+            responsibilities: [
+                "Built and led marketing team of 5 (2 graphic designers, 2 video editors, 1 intern)",
+                "Developed integrated marketing strategies across 5 real estate brands",
+                "Directed 20+ video campaigns - wrote scripts and provided creative direction",
+                "Managed Meta advertising with six-figure budgets and ROI accountability",
+                "Created content calendars and executed social media strategies",
+                "Coordinated with sales teams to align marketing with conversion goals",
+                "Delivered weekly performance reports and strategic recommendations"
+            ],
+            portfolio: [
+                "HSQ Towers (premium residential)",
+                "Address Fountain (luxury apartments)",
+                "Al Zafar Builders (developer brand)",
+                "Nouman Builder (investment properties)",
+                "Vorniqo Solutions (corporate brand)"
+            ],
+            achievement: "HSQ Towers viral campaign: 3.78M impressions, 1.37M reach, 6,368 conversations, contributing to 600-700 property bookings in 3 months",
+            skills: ["Multi-Brand Strategy", "Team Leadership", "Video Direction", "Meta Advertising", "Real Estate Marketing", "Performance Analytics", "Content Strategy"]
         },
         {
             id: 2,
-            role: "Art Director",
-            company: "Brand Studio Y",
-            period: "2020 - 2023",
-            achievements: [
-                "Developed award-winning OOH campaigns.",
-                "Managed brand identity projects for startups.",
-                "Directed commercial video shoots."
-            ]
+            role: "Marketing Specialist",
+            subtitle: "Project & Client Leadership Roles",
+            company: "Evertise Digital",
+            location: "Remote / Islamabad",
+            duration: "April 2021 - October 2024",
+            durationDisplay: "3.5 years",
+            status: "",
+            overview: "Led marketing operations for digital agency serving 8+ international clients across e-commerce, hospitality, retail, and nonprofit sectors. Managed full client lifecycle while leading cross-functional team and pursuing Bachelor's degree simultaneously.",
+            responsibilities: [
+                "Business Development: Managed Upwork presence, conducted client meetings, closed contracts",
+                "Team Leadership: Led team of 4 (graphic designer, web developer, video editor, email marketer)",
+                "Client Management: Maintained relationships across US, UK, and Pakistan markets",
+                "Campaign Execution: Delivered email marketing, Meta advertising, and social media campaigns",
+                "Project Management: Delegated workflows, ensured quality delivery, maintained client satisfaction",
+                "Mentorship: Trained junior team members and supported strategic discussions"
+            ],
+            portfolio: [
+                "Khubaib Foundation - Humanitarian relief campaigns",
+                "J&J Global - Meta awareness campaigns",
+                "Yoya Toys - Email marketing",
+                "CGK Linens - E-commerce strategy",
+                "Dineoutwithus - Restaurant marketing",
+                "Hidden Hideouts - Resort marketing",
+                "ProjectUSA - Lead generation",
+                "Summon Electronics - Comprehensive strategy"
+            ],
+            achievement: "Successfully managed diverse international portfolio while maintaining 95%+ client retention and completing Bachelor's degree",
+            skills: ["Business Development", "Int'l Client Management", "Email Marketing", "Meta Advertising", "Team Leadership", "Multi-Industry Marketing", "Strategic Planning"]
         },
         {
             id: 3,
-            role: "Senior Visual Designer",
-            company: "Tech Giant Z",
-            period: "2018 - 2020",
-            achievements: [
-                "Designed UI systems for global products.",
-                "Created marketing collateral for product launches.",
-                "Mentored junior designers."
-            ]
+            role: "Independent Marketing Consultant",
+            subtitle: "Personal Portfolio Projects",
+            company: "Self-Employed",
+            location: "Islamabad",
+            duration: "October 2024 - November 2025",
+            durationDisplay: "Gap year - Freelance projects",
+            status: "",
+            overview: "During transition year between agency and current role, developed portfolio of 4 small business brands from concept to market presence, demonstrating ability to build complete brand systems and execute growth marketing with limited budgets.",
+            responsibilities: [
+                "Cave de Crave: Grand opening campaign (30K+ local reach, 270 conversations)",
+                "Petal Perfection: Seasonal campaigns (40% engagement increase, <Rs50 cost per convo)",
+                "MG Studios: Wedding portfolio showcase (50+ booking inquiries)",
+                "Al Hikam Academy: Enrollment campaign (448K reach, 100+ parent inquiries)"
+            ],
+            portfolio: [],
+            achievement: "Demonstrated versatility across F&B, lifestyle, creative services, and education sectors. All campaigns achieved positive ROI on self-funded budgets.",
+            skills: ["Brand Identity", "Budget Optimization", "Small Business Growth", "Meta Advertising", "Entrepreneurial Marketing", "Multi-Industry Adaptability"]
         }
     ],
     socialLinks: {

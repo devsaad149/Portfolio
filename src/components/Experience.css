@@ -1,141 +1,340 @@
+/* Experience Section */
 .experience-section {
     background: var(--bg-dark);
-}
-
-.timeline-container {
     position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    overflow: hidden;
 }
 
-.timeline-line {
+.timeline-wrapper {
+    position: relative;
+    max-width: 800px;
+    /* Constrain width for readability */
+    margin: 0 auto;
+    padding-left: 2rem;
+    /* Space for the timeline line on the left */
+}
+
+/* Continuous Vertical Line */
+.timeline-wrapper::before {
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 29px;
+    /* Align with dots */
     width: 2px;
     background: rgba(255, 255, 255, 0.1);
-    transform: translateX(-50%);
+    z-index: 0;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 4rem;
-    width: 50%;
-}
-
-.timeline-item.left {
-    left: 0;
-    padding-right: 3rem;
-    text-align: right;
-}
-
-.timeline-item.right {
-    left: 50%;
+    margin-bottom: 2rem;
     padding-left: 3rem;
-    text-align: left;
+    /* Space for marker */
 }
 
-.timeline-content {
-    padding: 2rem;
-    background: var(--bg-card);
-    border-radius: 12px;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.timeline-item:last-child {
+    margin-bottom: 0;
 }
 
-.timeline-content:hover {
-    border-color: var(--accent-primary);
+/* Marker (Dot) */
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timeline-dot {
-    position: absolute;
-    top: 2rem;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     background: var(--bg-dark);
-    border: 2px solid var(--accent-primary);
+    border: 3px solid var(--text-secondary);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-primary);
     z-index: 2;
+    margin-top: 1.5rem;
+    /* Align with card header */
+    transition: all 0.3s ease;
 }
 
-.timeline-item.left .timeline-dot {
-    right: -20px;
+.timeline-item.current-role .timeline-dot {
+    border-color: var(--accent-primary);
+    background: var(--accent-primary);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
-.timeline-item.right .timeline-dot {
-    left: -20px;
+.timeline-item:hover .timeline-dot {
+    border-color: var(--accent-primary);
+    transform: scale(1.2);
 }
 
-.timeline-header {
-    margin-bottom: 0.5rem;
+/* Card Styling */
+.timeline-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.timeline-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-card.expanded {
+    border-color: var(--accent-primary);
+    background: rgba(26, 26, 26, 0.8);
+    /* Slightly darker/more solid when expanded */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.card-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.header-main {
+    flex: 1;
 }
 
 .role-title {
     font-size: 1.25rem;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.role-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.company-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .company-name {
-    font-size: 1rem;
     font-weight: 600;
+    color: var(--accent-primary);
+    font-size: 1rem;
 }
 
-.timeline-meta {
+.status-badge {
+    background: rgba(255, 215, 0, 0.15);
+    color: var(--accent-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.header-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 140px;
+}
+
+.meta-row {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 0.5rem;
     color: var(--text-secondary);
-    font-size: 0.875rem;
-    margin-bottom: 1.5rem;
-    justify-content: inherit;
-    /* Aligns based on parent text-align */
+    font-size: 0.85rem;
 }
 
-.timeline-achievements {
-    list-style: none;
-    padding: 0;
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
-.timeline-achievements li {
+.expand-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
     color: var(--text-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.timeline-card:hover .expand-btn,
+.timeline-card.expanded .expand-btn {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--accent-primary);
+}
+
+/* Body Content */
+.card-body {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.body-content {
+    padding: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.timeline-card.expanded .card-body {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+h4 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+h4:first-child {
+    margin-top: 0;
+}
+
+p,
+li {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 1.25rem;
+    list-style-type: disc;
+}
+
+li {
     margin-bottom: 0.5rem;
-    line-height: 1.5;
+}
+
+/* Portfolio Tags */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.portfolio-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Achievement Box */
+.achievement-box {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.achievement-icon {
+    color: var(--accent-primary);
+    min-width: 24px;
+    margin-top: 0.25rem;
+}
+
+.achievement-box h4 {
+    color: var(--accent-primary);
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+.achievement-box p {
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.95rem;
 }
 
+/* Skills */
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .timeline-line {
+    .timeline-wrapper {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-wrapper::before {
         left: 20px;
     }
 
     .timeline-item {
+        padding-left: 2.5rem;
+    }
+
+    .card-header {
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .expand-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        margin-top: 0;
+    }
+
+    .header-meta {
+        text-align: left;
         width: 100%;
-        padding-left: 50px;
-        padding-right: 0;
-        text-align: left;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 1rem;
     }
 
-    .timeline-item.left,
-    .timeline-item.right {
-        left: 0;
-        padding-right: 0;
-        padding-left: 50px;
-        text-align: left;
-    }
-
-    .timeline-meta {
+    .meta-row {
         justify-content: flex-start;
-    }
-
-    .timeline-dot {
-        left: 0 !important;
-        right: auto !important;
     }
 }
