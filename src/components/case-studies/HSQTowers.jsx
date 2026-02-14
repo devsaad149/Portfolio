@@ -4,6 +4,13 @@ import { ArrowLeft, TrendingUp, Users, MessageCircle, Building, Play, Download }
 import { Link } from 'react-router-dom';
 import './CaseStudy.css';
 
+const getAssetPath = (path) => {
+    const isProduction = import.meta.env.PROD;
+    const base = isProduction ? '/Portfolio' : '';
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    return `${base}${normalizedPath}`;
+};
+
 const HSQTowers = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -28,7 +35,7 @@ const HSQTowers = () => {
             <header className="case-study-hero">
                 <div className="case-study-hero-bg">
                     {/* Placeholder for hero video/image - using one of the existing files */}
-                    <img src="/images/restored/hsq_highway_billboard_1771008038206.png" alt="HSQ Towers Campaign" />
+                    <img src={getAssetPath("/images/restored/hsq_highway_billboard_1771008038206.png")} alt="HSQ Towers Campaign" />
                     <div className="case-study-hero-overlay"></div>
                 </div>
 
@@ -39,7 +46,7 @@ const HSQTowers = () => {
                         variants={fadeInUp}
                         className="mb-8 flex justify-center"
                     >
-                        <img src="/images/social/hsq-logo.jpg" alt="HSQ Towers Logo" className="w-24 h-24 rounded-full border-4 border-yellow-500/30 shadow-2xl" />
+                        <img src={getAssetPath("/images/social/hsq-logo.jpg")} alt="HSQ Towers Logo" className="w-24 h-24 rounded-full border-4 border-yellow-500/30 shadow-2xl" />
                     </motion.div>
 
                     <motion.span
@@ -117,7 +124,7 @@ const HSQTowers = () => {
                             </ul>
                         </div>
                         <div className="section-image rounded-xl overflow-hidden shadow-2xl border border-white/10">
-                            <img src="/images/restored/hsq_billboard_mockup_1771008174452.png" alt="HSQ Towers Challenge" className="w-full h-full object-cover" />
+                            <img src={getAssetPath("/images/restored/hsq_billboard_mockup_1771008174452.png")} alt="HSQ Towers Challenge" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </section>
@@ -172,7 +179,7 @@ const HSQTowers = () => {
                         <div className="order-2 md:order-1 relative">
                             <div className="absolute -inset-4 bg-yellow-500/20 blur-3xl opacity-30 rounded-full"></div>
                             {/* UPDATED: Consistently use the HSQ proof image for analytics dashboard */}
-                            <img src="/images/analytics/hsq-proof.jpg" alt="Analytics Dashboard" className="relative z-10 rounded-xl shadow-2xl border border-white/10" />
+                            <img src={getAssetPath("/images/analytics/hsq-proof.jpg")} alt="Analytics Dashboard" className="relative z-10 rounded-xl shadow-2xl border border-white/10" />
                         </div>
                         <div className="section-content order-1 md:order-2">
                             <motion.h2 variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -264,19 +271,19 @@ const HSQTowers = () => {
                     <h2 className="text-center mb-12">Campaign Assets</h2>
                     <div className="gallery-grid">
                         <div className="gallery-item group">
-                            <video src="/videos/hsq-cta.mp4" controls className="w-full h-full object-cover" poster="/images/restored/hsq_billboard_mockup_1771007886208.png"></video>
+                            <video src={getAssetPath("/videos/hsq-cta.mp4")} controls className="w-full h-full object-cover" poster={getAssetPath("/images/restored/hsq_billboard_mockup_1771007886208.png")}></video>
                             <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
                                 <p className="text-white font-bold text-sm">Action-Driven CTA Reel</p>
                             </div>
                         </div>
                         <div className="gallery-item group">
-                            <video src="/videos/hsq-reach.mp4" controls className="w-full h-full object-cover" poster="/images/restored/hsq_highway_billboard_1771008038206.png"></video>
+                            <video src={getAssetPath("/videos/hsq-reach.mp4")} controls className="w-full h-full object-cover" poster={getAssetPath("/images/restored/hsq_highway_billboard_1771008038206.png")}></video>
                             <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
                                 <p className="text-white font-bold text-sm">Broad Reach Campaign</p>
                             </div>
                         </div>
                         <div className="gallery-item group">
-                            <video src="/videos/lifestyle-showcase.mp4" controls className="w-full h-full object-cover"></video>
+                            <video src={getAssetPath("/videos/lifestyle-showcase.mp4")} controls className="w-full h-full object-cover"></video>
                             <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
                                 <p className="text-white font-bold text-sm">Lifestyle & Amenities Showcase</p>
                             </div>
