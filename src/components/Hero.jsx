@@ -19,55 +19,67 @@ const Hero = () => {
     const bgImage = getAssetPath("/images/saad_image.jpg");
 
     return (
-        <section className="hero-section" style={{ backgroundImage: `url(${bgImage})` }}>
-            <div className="hero-overlay"></div>
-
+        <section className="hero-section">
             <div className="container hero-container">
-                <div className="hero-content">
+                <div className="hero-layout">
+                    <div className="hero-content">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <span className="hero-greeting">HELLO, I'M</span>
+                        </motion.div>
+
+                        <motion.h1
+                            className="hero-name"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.8 }}
+                        >
+                            {name}
+                        </motion.h1>
+
+                        <motion.h2
+                            className="hero-role text-gradient"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4, duration: 0.8 }}
+                        >
+                            {title}
+                        </motion.h2>
+
+                        <motion.p
+                            className="hero-subtitle"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6, duration: 0.8 }}
+                        >
+                            {subtitle}
+                        </motion.p>
+
+                        <motion.div
+                            className="hero-cta-wrapper"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.8, duration: 0.8 }}
+                        >
+                            <a href="#featured-work" className="btn-primary-hero">
+                                {cta} <span className="arrow-icon">→</span>
+                            </a>
+                        </motion.div>
+                    </div>
+
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        className="hero-image-container"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4, duration: 1 }}
                     >
-                        <span className="hero-greeting">HELLO, I'M</span>
-                    </motion.div>
-
-                    <motion.h1
-                        className="hero-name"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.8 }}
-                    >
-                        {name}
-                    </motion.h1>
-
-                    <motion.h2
-                        className="hero-role text-gradient"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.8 }}
-                    >
-                        {title}
-                    </motion.h2>
-
-                    <motion.p
-                        className="hero-subtitle"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6, duration: 0.8 }}
-                    >
-                        {subtitle}
-                    </motion.p>
-
-                    <motion.div
-                        className="hero-cta-wrapper"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 0.8 }}
-                    >
-                        <a href="#featured-work" className="btn-primary-hero">
-                            {cta} <span className="arrow-icon">→</span>
-                        </a>
+                        <div className="hero-image-wrapper">
+                            <img src={bgImage} alt={name} className="hero-img" />
+                            <div className="hero-img-overlay"></div>
+                        </div>
                     </motion.div>
                 </div>
 
