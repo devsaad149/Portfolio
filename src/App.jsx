@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import ThreeScene from './components/ThreeScene';
 import Home from './components/Home';
@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/Portfolio">
+    <Router>
       <ReactLenis root>
         <div className="App">
           <CustomCursor />
